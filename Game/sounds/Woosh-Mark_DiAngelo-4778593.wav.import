@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Woosh-Mark_DiAngelo-4778593.wav-84efe7e192f4382b077ef588d3c170d7.sample"
+
+[deps]
+
+source_file="res://sounds/Woosh-Mark_DiAngelo-4778593.wav"
+dest_files=[ "res://.import/Woosh-Mark_DiAngelo-4778593.wav-84efe7e192f4382b077ef588d3c170d7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

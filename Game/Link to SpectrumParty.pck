@@ -1,0 +1,1 @@
+/home/lucas3h/Documents/Games/MagoCores/gamedevdohiroshi/Game/SpectrumParty.pck

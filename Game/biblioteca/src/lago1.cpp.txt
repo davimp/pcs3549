@@ -1,0 +1,179 @@
+#include "lago.h"
+#include <bits/stdc++.h>
+#include <stdlib.h>
+
+using namespace godot;
+
+void Lago::_register_methods() 
+{
+	register_method("insere", &Lago::insere);
+	register_method("printa", &Lago::printa);
+	//register_method("_init", &Lago::_init);
+	//register_property<GDExample, float>("amplitude", &GDExample::amplitude, 10.0);
+
+	//register_signal<GDExample>((char *)"position_changed", "node", GODOT_VARIANT_TYPE_OBJECT, "new_pos", GODOT_VARIANT_TYPE_VECTOR2);
+}
+
+Lago::Lago() 
+{
+	ff = std::fopen("tela.txt", "w");	
+	p = 0;
+}
+
+Lago::~Lago()
+{
+
+}
+
+void Lago::printa()
+{
+	// add your cleanup here
+	std::string s;	
+	/
+	
+	for(i = 0; i < 1280;i++)
+	{
+		s = "";
+		for(j = 0; j < 720;j++)
+		{
+			//if (mapa[i*LIM + j] || 1) continue;
+			s += std::to_string(mapa[i*LIM + j]);
+		}
+		//Godot::print(s.data());
+		std::fprintf(ff,"%s\n",s.data());
+	}
+	
+	std::fclose(ff);
+}
+
+void Lago::_init() {
+	// initialize any variables here
+	Godot::print("Testando");
+}
+
+void Lago::insere(Vector2 v, Vector2 u)
+{
+	Vector2 z = (v-u).normalized();
+	
+	/*mi = std::max(std::round(v.x), std::round(u.x));
+	mj = std::max(std::round(v.x), std::round(u.x));
+	
+	i = std::min(std::round(v.x), std::round(u.x));
+	j = std::min(std::round(v.x), std::round(u.x));*/
+	i = v.x;
+	j = v.y;
+	mi = u.x;
+	mj = u.y;
+	
+	bool ni,nj;
+	
+	ni = v.x < u.x;
+	nj = v.y < u.y;
+	
+	int k = 0;
+	
+	
+	while(i != mi || j != mj)
+	{
+		mapa[i*LIM+j] = 9;
+		//Godot::print((std::to_string(i) + " " + std::to_string(j)).data());
+		//Godot::print((std::to_string((mi - i)*(mi - i)) + "<-->" + std::to_string((mj - j)*(mj - j))).data());
+		if((mi - i)*(mi - i) > (mj - j)*(mj - j))
+		{
+			if(ni)
+				i++;
+			else
+				i--;
+		}
+		else
+		{
+			if(nj)
+				j++;
+			else
+				j--;
+			
+		}
+	}
+		mapa[i*LIM+j] = 9;
+	
+	std::memset(visitado,0,sizeof(visitado));
+	
+	p = 1;
+	mapa[0] = 0;
+	visitado[0][0] = 1;
+	dfs(0, 0);
+	
+	/*for(i = 0;i<1280;i++)
+	{
+		mapa[i*LIM] = 0;
+		mapa[i*LIM + 719] = 0;
+		visitado[i][0] = 1;
+		visitado[i][719] = 1;
+		dfs(i, 0);
+		dfs(i, 719);
+	}
+	
+	for(i = 0;i<720;i++)
+	{
+		mapa[i] = 0;
+		mapa[1279*LIM + i] = 0;
+		visitado[0][i] = 1;
+		visitado[1279][i] = 1;
+		dfs(0, i);
+		dfs(1279, i);
+	}*/
+	
+	for(i=0;i<100;i++)
+		for(j=0;j<100;j++)
+		{
+			if(visitado[i][j] || mapa[i*LIM+j] == 9)
+			 continue;
+			
+			visitado[i][j] = 1;
+			mapa[i*LIM+j] = p++;
+			printf("-->%d\n",p);
+			dfs(i,j);
+			
+		}/**/
+	
+
+	
+	
+	
+}
+
+void Lago::dfs(int x, int y)
+{
+	//Godot::print((std::to_string(x) + " " + std::to_string(y)).data());
+	//puts("TTTTT");
+	for(int aa = -1; aa < 2;aa+=2)
+	{
+		if(x + aa < 0 || x + aa >= 100)
+			continue;
+		for(int bb = -1; bb < 2; bb += 2)
+		{
+			if(y + bb < 0 || y + bb >= 100)
+				continue;
+			if(visitado[x + aa][y+bb] || mapa[(x + aa)*LIM + y+bb] == 9) continue;
+				
+			visitado[x + aa][y+bb] = 1;
+			mapa[(x + aa)*LIM + y+bb] = mapa[x*LIM + y];
+			dfs(x + aa, y+bb);
+			
+		}
+	}
+}
+
+
+void Lago:: mapeia(Vector2 v, int x)
+{
+	mapa[v.x * LIM + v.y] = x;
+}
+
+int Lago:: mapeio(Vector2 v)
+{
+	return mapa[v.x * LIM + v.y];
+}
+
+
+

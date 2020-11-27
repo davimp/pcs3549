@@ -1,0 +1,157 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://scripts/Pausa/Pausa.gd" type="Script" id=1]
+[ext_resource path="res://assets/Dialog_box.png" type="Texture" id=2]
+[ext_resource path="res://assets/MainMenu/fonts/power_pixel-7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/idle.png" type="Texture" id=4]
+[ext_resource path="res://assets/choose.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+font_data = ExtResource( 3 )
+
+[node name="Pausa" type="CanvasLayer"]
+pause_mode = 2
+
+[node name="Pausa" type="Control" parent="." groups=[
+"stop",
+]]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Pausa"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.486275 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Pausa"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -150.0
+margin_top = -224.703
+margin_right = 150.0
+margin_bottom = 225.297
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pausa/NinePatchRect"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -80.0
+margin_top = 62.0
+margin_right = 80.0
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 1 )
+text = "PAUSE"
+
+[node name="TextureButton" type="TextureButton" parent="Pausa/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -67.5
+margin_right = 74.0
+margin_bottom = -32.5
+rect_clip_content = true
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pausa/NinePatchRect/TextureButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -52.0
+margin_top = -8.0
+margin_right = 52.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 2 )
+text = "continue"
+
+[node name="TextureButton2" type="TextureButton" parent="Pausa/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = -17.5
+margin_right = 74.0
+margin_bottom = 17.5
+rect_clip_content = true
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pausa/NinePatchRect/TextureButton2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -45.5
+margin_top = -8.0
+margin_right = 45.5
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 3 )
+text = "options"
+
+[node name="TextureButton3" type="TextureButton" parent="Pausa/NinePatchRect"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -74.0
+margin_top = 33.5
+margin_right = 74.0
+margin_bottom = 68.5
+rect_clip_content = true
+texture_normal = ExtResource( 4 )
+texture_hover = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Pausa/NinePatchRect/TextureButton3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -26.0
+margin_top = -8.0
+margin_right = 26.0
+margin_bottom = 8.0
+custom_fonts/font = SubResource( 4 )
+text = "exit"
+
+[connection signal="pressed" from="Pausa/NinePatchRect/TextureButton" to="Pausa" method="_on_TextureButton_pressed"]
+[connection signal="pressed" from="Pausa/NinePatchRect/TextureButton2" to="Pausa" method="_on_TextureButton2_pressed"]
+[connection signal="pressed" from="Pausa/NinePatchRect/TextureButton3" to="Pausa" method="_on_TextureButton3_pressed"]
