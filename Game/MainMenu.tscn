@@ -156,6 +156,7 @@ __meta__ = {
 position = Vector2( 951.371, 402.876 )
 scale = Vector2( 8.30729, 8.75274 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
@@ -163,7 +164,6 @@ position = Vector2( 64.2297, 214.027 )
 scale = Vector2( 0.965669, 0.921679 )
 frames = SubResource( 4 )
 animation = "New Anim"
-frame = 1
 playing = true
 flip_h = true
 

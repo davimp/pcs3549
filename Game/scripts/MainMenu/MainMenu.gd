@@ -44,7 +44,7 @@ func _input(event):
 			state += 1
 		elif event.pressed and event.scancode == KEY_ENTER:
 			if state == 0:
-				var scene = load("res://ChooseMiniGame.tscn")
+				var scene = load("res://teste.tscn")
 
 				var basquete = scene.instance()
 				get_tree().get_root().add_child(basquete)
