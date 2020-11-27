@@ -1,0 +1,31 @@
+Arrumar o menu: Tirar tela intermediaria do minigame, mudar o nome do jogo e a imagem e mudar os creditos
+
+Inimigos: Decidir quantos diferentes e como serão (habilidades e dano causado)
+	Bully
+	Cara do aluguel
+	Professor
+	Morte (chefão)
+	
+Geração dos inimigos
+
+Sprites dos inimigos (Harada)
+
+IA dos inimigos (Mohamad)
+
+Arte do mapa (Harada?)
+
+Ataques do personagem
+
+Contagem de pontos e evolução do personagem
+
+Interações entre diferentes idades do player e inimigos
+
+Sprites de movimentação do personagem
+
+Objetos auxiliares (tower defense):
+	arte
+	Decidir quais serão
+	
+Ajustar câmera para seguir personagem caso o mapa seja maior que a tela (Davi)
+
+
