@@ -23,7 +23,7 @@ const TEMPO_SOCO = 0.4
 var soco = 0
 var tempo_soco = 0.0
 var vel_soco = 0.0
-var teste
+var acertou_soco = 0
 
 var vida = 1000
 var mana = 100
@@ -189,6 +189,7 @@ func _physics_process(delta):
 # -------------------------------------------------------> SOCO <------------------------------------------------------
 func punch():
 	if soco == 0:
+		acertou_soco = 1
 		soco = 1
 		tempo_soco = 0.0
 		vel_soco = sentido * VEL_SOCO
@@ -284,13 +285,10 @@ func control(delta):
 					pass
 		else:
 			motion.x = 0
-			if soco == 0:
-				$Sprite.play("Idle")
 		if Input.is_action_pressed("ui_down") || Input.is_action_pressed("ui_up"):
 			if Input.is_action_pressed("ui_down"):
 				motion.y = bebeu* SPEED
 				sentido = 1
-				$Sprite.flip_h = false
 				if soco == 0:
 					$Sprite.play("Run")
 				else:
@@ -299,7 +297,6 @@ func control(delta):
 			if Input.is_action_pressed("ui_up"):
 				motion.y = - bebeu* SPEED
 				sentido = -1
-				$Sprite.flip_h = false
 				if soco == 0:
 					$Sprite.play("Run")
 				else:
@@ -307,7 +304,7 @@ func control(delta):
 					pass
 		else:
 			motion.y = 0
-			if soco == 0:
+			if (soco == 0) and (motion.x == 0):
 				$Sprite.play("Idle")
 		
 		#else:
@@ -554,15 +551,14 @@ func bebado(delta):
 # ------------------------------------------------------> SINAIS <------------------------------------------------------
 
 func _on_Mao_area_entered(area):
-	print(String(player) + " " + String(area.get_groups()) + " soco = " + String(soco)) 
+	print("'2'" + String(player) + " " + String(area.get_groups()) + " soco = " + String(soco)) 
 	
 	if(soco == 0):
-		pass
+		return
 	
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
-		print("SOQUEI")
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self and acertou_soco == 0):
 		area.get_parent().vida -= DANO_SOCO
-		
+		acertou_soco = 1
 		if area.get_parent().player == 1:
 			self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO
 		elif area.get_parent().player == 2:
@@ -574,8 +570,10 @@ func _on_Mao_area_entered(area):
 		sound.set_volume_db(-5);
 		sound.play();
 		
+		print ("morreu")
 		if area.get_parent().vida <= 0:
 			area.get_parent().get_node("Sprite").flip_h = !($Sprite.flip_h)
+			
 			pass
 			
 		area.get_parent().socado(sentido)

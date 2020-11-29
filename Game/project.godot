@@ -24,12 +24,6 @@ config/name="Game"
 run/main_scene="res://MainMenu.tscn"
 config/icon="res://icone_roleta.png"
 
-[display]
-
-window/size/width=1280
-window/size/height=720
-window/size/resizable=false
-
 [input]
 
 pause={
