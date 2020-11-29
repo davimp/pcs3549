@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://GUI.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Pausa.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Pausa.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,7 +18,9 @@ format = 1
 [node name="Player" parent="." instance=ExtResource( 1 )]
 position = Vector2( 599.828, 315.818 )
 
-[node name="GUI" parent="." instance=ExtResource( 2 )]
+[node name="Enemy" parent="." instance=ExtResource( 2 )]
 
-[node name="Pausa" parent="." instance=ExtResource( 3 )]
+[node name="GUI" parent="." instance=ExtResource( 3 )]
+
+[node name="Pausa" parent="." instance=ExtResource( 4 )]
 

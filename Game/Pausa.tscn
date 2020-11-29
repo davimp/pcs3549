@@ -21,6 +21,7 @@ font_data = ExtResource( 3 )
 
 [node name="Pausa" type="CanvasLayer"]
 pause_mode = 2
+editor/display_folded = true
 
 [node name="Pausa" type="Control" parent="." groups=[
 "stop",

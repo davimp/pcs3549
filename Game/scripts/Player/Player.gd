@@ -284,13 +284,10 @@ func control(delta):
 					pass
 		else:
 			motion.x = 0
-			if soco == 0:
-				$Sprite.play("Idle")
 		if Input.is_action_pressed("ui_down") || Input.is_action_pressed("ui_up"):
 			if Input.is_action_pressed("ui_down"):
 				motion.y = bebeu* SPEED
 				sentido = 1
-				$Sprite.flip_h = false
 				if soco == 0:
 					$Sprite.play("Run")
 				else:
@@ -299,7 +296,6 @@ func control(delta):
 			if Input.is_action_pressed("ui_up"):
 				motion.y = - bebeu* SPEED
 				sentido = -1
-				$Sprite.flip_h = false
 				if soco == 0:
 					$Sprite.play("Run")
 				else:
@@ -307,7 +303,7 @@ func control(delta):
 					pass
 		else:
 			motion.y = 0
-			if soco == 0:
+			if (soco == 0) and (motion.x == 0):
 				$Sprite.play("Idle")
 		
 		#else:
@@ -557,7 +553,7 @@ func _on_Mao_area_entered(area):
 	print(String(player) + " " + String(area.get_groups()) + " soco = " + String(soco)) 
 	
 	if(soco == 0):
-		pass
+		return
 	
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
 		print("SOQUEI")
