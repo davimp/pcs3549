@@ -570,8 +570,10 @@ func _on_Mao_area_entered(area):
 		sound.set_volume_db(-5);
 		sound.play();
 		
+		print ("morreu")
 		if area.get_parent().vida <= 0:
 			area.get_parent().get_node("Sprite").flip_h = !($Sprite.flip_h)
+			
 			pass
 			
 		area.get_parent().socado(sentido)
