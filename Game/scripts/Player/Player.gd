@@ -23,7 +23,7 @@ const TEMPO_SOCO = 0.4
 var soco = 0
 var tempo_soco = 0.0
 var vel_soco = 0.0
-var teste
+var acertou_soco = 0
 
 var vida = 1000
 var mana = 100
@@ -189,6 +189,7 @@ func _physics_process(delta):
 # -------------------------------------------------------> SOCO <------------------------------------------------------
 func punch():
 	if soco == 0:
+		acertou_soco = 1
 		soco = 1
 		tempo_soco = 0.0
 		vel_soco = sentido * VEL_SOCO
@@ -550,15 +551,14 @@ func bebado(delta):
 # ------------------------------------------------------> SINAIS <------------------------------------------------------
 
 func _on_Mao_area_entered(area):
-	print(String(player) + " " + String(area.get_groups()) + " soco = " + String(soco)) 
+	print("'2'" + String(player) + " " + String(area.get_groups()) + " soco = " + String(soco)) 
 	
 	if(soco == 0):
 		return
 	
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
-		print("SOQUEI")
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self and acertou_soco == 0):
 		area.get_parent().vida -= DANO_SOCO
-		
+		acertou_soco = 1
 		if area.get_parent().player == 1:
 			self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO
 		elif area.get_parent().player == 2:
