@@ -86,7 +86,7 @@ func _on_TextureButton3_pressed():
 	atual.call_deferred("free")
 
 	# Add the next level
-	var basquete_resource = load("res://MainMenu.tscn")
+	var basquete_resource = load("res://cenas/MainMenu.tscn")
 	var basquete = basquete_resource.instance()		
 			
 	root.add_child(basquete)

@@ -11,7 +11,7 @@ func _input(event):
 	if event is InputEventKey and event.is_pressed() and event.scancode == KEY_ENTER and ok:
 		ok = 0
 		#get_tree().change_scene("res://MainMenu.tscn")
-		var scene = load("res://MainMenu.tscn")
+		var scene = load("res://cenas/MainMenu.tscn")
 
 		var menu = scene.instance()
 		get_tree().get_root().add_child(menu)
