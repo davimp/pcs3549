@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/espinho.png-439e5ef493a14c28ce9aeaf448c685fa.stex"
+path="res://.import/espinho.png-c0d9c5a83f27cc250bc3af30475af9c4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Poderes/espinho.png"
-dest_files=[ "res://.import/espinho.png-439e5ef493a14c28ce9aeaf448c685fa.stex" ]
+source_file="res://assets/Objetos/espinho.png"
+dest_files=[ "res://.import/espinho.png-c0d9c5a83f27cc250bc3af30475af9c4.stex" ]
 
 [params]
 
