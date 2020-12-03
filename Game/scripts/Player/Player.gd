@@ -1,6 +1,9 @@
 extends KinematicBody2D
 
 export var player = 1
+export var idade = 1
+
+var nomeIdade = ["baby", "hiroshi", "adult", "old"]
 
 enum PODERES {VERMELHO, LARANJA, AZUL, GELO, AMARELO, ROXO, VERDE, ESPINHO}
 
@@ -93,7 +96,7 @@ func _ready():
 func _process(delta):
 	
 	if vida <= 0:
-		$Sprite.play("Dead")
+		$Sprite.play(nomeIdade[idade] + "Dead")
 	
 	mana += TAXA_MANA*10 * delta
 	
@@ -122,7 +125,7 @@ func _physics_process(delta):
 		motion.y += GRAVITY
 	
 		if vida <= 0:
-			$Sprite.play("Dead")
+			$Sprite.play(nomeIdade[idade] + "Dead")
 			return
 	else:
 		#motion = Vector2()
@@ -194,7 +197,7 @@ func punch():
 		tempo_soco = 0.0
 		vel_soco = sentido * VEL_SOCO
 		if player == 1:
-			$Sprite.play("Punch")
+			$Sprite.play(nomeIdade[idade] + "Punch")
 		else:
 			$Sprite.play("alienPunch")
 		var sound = AudioStreamPlayer2D.new();
@@ -218,7 +221,7 @@ func socar(delta):
 		vel_soco = 0;
 		$Mao.position.x = 0
 		tempo_soco = 0
-		$Sprite.play("Idle")
+		$Sprite.play(nomeIdade[idade] + "Idle")
 	
 	if soco == 1:
 		$Mao.position = sign(vel_soco) * sentido * $Mao.position 
@@ -258,7 +261,7 @@ func colide():
 # -----------------------------------------------------> CONTROLES <----------------------------------------------------
 func control(delta):
 	if vida <= 0:
-		$Sprite.play("Dead")
+		$Sprite.play(nomeIdade[idade] + "Dead")
 		return
 	
 	#print(lento)
@@ -270,7 +273,7 @@ func control(delta):
 				sentido = 1
 				$Sprite.flip_h = true
 				if soco == 0:
-					$Sprite.play("Run")
+					$Sprite.play(nomeIdade[idade] + "Run")
 				else:
 					#animação de Run + punch
 					pass
@@ -279,7 +282,7 @@ func control(delta):
 				sentido = -1
 				$Sprite.flip_h = false
 				if soco == 0:
-					$Sprite.play("Run")
+					$Sprite.play(nomeIdade[idade] + "Run")
 				else:
 					#animação de Run + punch
 					pass
@@ -290,7 +293,7 @@ func control(delta):
 				motion.y = bebeu* SPEED
 				sentido = 1
 				if soco == 0:
-					$Sprite.play("Run")
+					$Sprite.play(nomeIdade[idade] + "Run")
 				else:
 					#animação de Run + punch
 					pass
@@ -298,14 +301,14 @@ func control(delta):
 				motion.y = - bebeu* SPEED
 				sentido = -1
 				if soco == 0:
-					$Sprite.play("Run")
+					$Sprite.play(nomeIdade[idade] + "Run")
 				else:
 					#animação de Run + punch
 					pass
 		else:
 			motion.y = 0
 			if (soco == 0) and (motion.x == 0):
-				$Sprite.play("Idle")
+				$Sprite.play(nomeIdade[idade] + "Idle")
 		
 		#else:
 			#$Sprite.play("Jump")
@@ -359,7 +362,7 @@ func control(delta):
 
 func control_vinicola(delta):
 	if vida <= 0:
-		$Sprite.play("Dead")
+		$Sprite.play(nomeIdade[idade] + "Dead")
 		return
 	
 	#print(lento)
@@ -370,7 +373,7 @@ func control_vinicola(delta):
 			sentido = 1
 			$Sprite.flip_h = true
 			if soco == 0:
-				$Sprite.play("Run")
+				$Sprite.play(nomeIdade[idade] + "Run")
 			else:
 				#animação de Run + punch
 				pass
@@ -379,13 +382,13 @@ func control_vinicola(delta):
 			sentido = -1
 			$Sprite.flip_h = false
 			if soco == 0:
-				$Sprite.play("Run")
+				$Sprite.play(nomeIdade[idade] + "Run")
 			else:
 				#animação de Run + punch
 				pass
 		else:
 			if soco == 0:
-				$Sprite.play("Idle")
+				$Sprite.play(nomeIdade[idade] + "Idle")
 		
 		if Input.is_action_pressed("ui_up"):
 			print("PRESSIONADO")
