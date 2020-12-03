@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Dialog_box.png-4bd55e86f5260de2dac064f9079acab1.stex"
+path="res://.import/projVermelho.png-55a9a63774e6a22d373c92393eeca24b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Dialog_box.png"
-dest_files=[ "res://.import/Dialog_box.png-4bd55e86f5260de2dac064f9079acab1.stex" ]
+source_file="res://assets/Objetos/projVermelho.png"
+dest_files=[ "res://.import/projVermelho.png-55a9a63774e6a22d373c92393eeca24b.stex" ]
 
 [params]
 

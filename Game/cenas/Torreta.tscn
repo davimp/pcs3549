@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scripts/Torreta.gd" type="Script" id=1]
+[ext_resource path="res://assets/Objetos/torreta0.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.4486, 18.2151 )
+
+[node name="Torreta" type="KinematicBody2D" groups=[
+"player",
+]]
+position = Vector2( 198.011, 132.598 )
+input_pickable = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 2.39557, 9.24016 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0.63015, 8.30454 )
+scale = Vector2( 0.766537, 0.795273 )
+texture = ExtResource( 2 )
+
+[connection signal="input_event" from="." to="." method="_on_Torreta_input_event"]

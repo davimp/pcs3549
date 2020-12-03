@@ -2,18 +2,11 @@
 
 [ext_resource path="res://tres/new_tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://cenas/Player.tscn" type="PackedScene" id=2]
-[ext_resource path="res://cenas/Enemy.tscn" type="PackedScene" id=3]
-[ext_resource path="res://cenas/GUI.tscn" type="PackedScene" id=4]
-[ext_resource path="res://cenas/Pausa.tscn" type="PackedScene" id=5]
+[ext_resource path="res://cenas/GUI.tscn" type="PackedScene" id=3]
+[ext_resource path="res://cenas/Pausa.tscn" type="PackedScene" id=4]
+[ext_resource path="res://cenas/TowerDefense.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-margin_left = -5.03503
-margin_top = -2.51758
-margin_right = 1312.96
-margin_bottom = 742.482
-color = Color( 0.415686, 0.956863, 1, 1 )
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2( 2, 2 )
@@ -39,9 +32,15 @@ tile_data = PoolIntArray( -65512, 0, 0, 6, 0, 0, 16, 0, 0, 393243, 0, 0 )
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 599.828, 315.818 )
 
-[node name="Enemy" parent="." instance=ExtResource( 3 )]
+[node name="GUI" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 1.10803 )
 
-[node name="GUI" parent="." instance=ExtResource( 4 )]
+[node name="Pausa" parent="." instance=ExtResource( 4 )]
+editor/display_folded = false
 
-[node name="Pausa" parent="." instance=ExtResource( 5 )]
+[node name="TowerDefense" parent="." instance=ExtResource( 5 )]
+margin_left = 894.044
+margin_top = 19.8061
+margin_right = 994.044
+margin_bottom = 119.806
 
