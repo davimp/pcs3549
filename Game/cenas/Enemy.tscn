@@ -113,3 +113,4 @@ frame = 6
 [connection signal="body_exited" from="Mao" to="." method="_on_Mao_body_exited"]
 [connection signal="body_entered" from="Corpo" to="." method="_on_Corpo_body_entered"]
 [connection signal="area_entered" from="Fora" to="." method="_on_Fora_area_entered"]
+[connection signal="area_exited" from="Fora" to="." method="_on_Fora_area_exited"]
