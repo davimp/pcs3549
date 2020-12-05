@@ -30,7 +30,7 @@ var DURACAO_KNOCK_BACK = 0.2
 var knock_back
 var tempo_knock_back
 
-var colisaoPlayer = 0
+var colisaoPlayer = false
 var erro = 2
 
 var ocupado = 0
@@ -87,7 +87,8 @@ func _physics_process(delta):
 		empurrao(delta)
 	
 	#motion = move_and_slide(motion, UP)
-	colisaoPlayer = move_and_collide(motion*delta)
+	#colisaoPlayer = move_and_collide(motion*delta)
+	move_and_collide(motion*delta)
 	
 	lento = 0
 	
@@ -192,7 +193,7 @@ func move(delta):
 	if self.get_parent().get_node("Player").position.y > self.position.y + erro:
 		motion.y = SPEED
 		sentido = 1
-		if soco == 0 and colisaoPlayer:
+		if soco == 0 and not colisaoPlayer:
 			$Sprite.play("Run")
 		else:
 			#animação de Run + punch
@@ -200,7 +201,7 @@ func move(delta):
 	elif self.get_parent().get_node("Player").position.y < self.position.y - erro:
 		motion.y = - SPEED
 		sentido = -1
-		if soco == 0 and colisaoPlayer:
+		if soco == 0 and not colisaoPlayer:
 			$Sprite.play("Run")
 		else:
 			#animação de Run + punch
@@ -210,6 +211,7 @@ func move(delta):
 		#if (soco == 0) and colisaoPlayer:
 		#	$Sprite.play("Idle")
 		if soco == 0 and colisaoPlayer:
+			colisaoPlayer = false
 			punch()
 		
 	#else:
@@ -251,27 +253,12 @@ func _on_Mao_area_entered(area):
 			
 		area.get_parent().socado(sentido)
 		
-		
-	
 	
 	pass
+	
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+func _on_Fora_area_entered(area):
+	print('aAAsAasASAsSAsASSASASaSAS')
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
+		colisaoPlayer = true
+	pass	

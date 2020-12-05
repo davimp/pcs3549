@@ -5,11 +5,11 @@
 [ext_resource path="res://assets/Player/alienRun1.png" type="Texture" id=3]
 [ext_resource path="res://assets/Player/alienIdle0.png" type="Texture" id=4]
 [ext_resource path="res://assets/Player/alienIdle1.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/alienPunch1.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/alienPunch0.png" type="Texture" id=7]
-[ext_resource path="res://assets/Poderes/hiroshiLaser2.png" type="Texture" id=8]
-[ext_resource path="res://assets/Poderes/hiroshiLaser3.png" type="Texture" id=9]
-[ext_resource path="res://assets/Poderes/hiroshiLaser1.png" type="Texture" id=10]
+[ext_resource path="res://assets/Poderes/hiroshiLaser2.png" type="Texture" id=6]
+[ext_resource path="res://assets/Poderes/hiroshiLaser3.png" type="Texture" id=7]
+[ext_resource path="res://assets/Poderes/hiroshiLaser1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/alienPunch1.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/alienPunch0.png" type="Texture" id=10]
 [ext_resource path="res://assets/Poderes/bolha0.png" type="Texture" id=11]
 [ext_resource path="res://assets/Poderes/bolha1.png" type="Texture" id=12]
 [ext_resource path="res://assets/Poderes/bolha2.png" type="Texture" id=13]
@@ -31,15 +31,15 @@ animations = [ {
 "name": "Idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 7 ), ExtResource( 6 ) ],
-"loop": false,
-"name": "Punch",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": false,
 "name": "Laser",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 10 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "Punch",
+"speed": 20.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -112,4 +112,4 @@ frame = 6
 [connection signal="body_entered" from="Mao" to="." method="_on_Mao_body_entered"]
 [connection signal="body_exited" from="Mao" to="." method="_on_Mao_body_exited"]
 [connection signal="body_entered" from="Corpo" to="." method="_on_Corpo_body_entered"]
-[connection signal="body_exited" from="Corpo" to="." method="_on_Corpo_body_exited"]
+[connection signal="area_entered" from="Fora" to="." method="_on_Fora_area_entered"]
