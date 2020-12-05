@@ -226,7 +226,7 @@ func move(delta):
 
 
 func _on_Mao_area_entered(area):
-	print("'1'" + String(player) + " " + String(area.get_groups()) + " socao = " + String(soco)) 
+	#print("'1'" + String(player) + " " + String(area.get_groups()) + " socao = " + String(soco)) 
 	
 	if(soco == 0):
 		return
@@ -258,7 +258,6 @@ func _on_Mao_area_entered(area):
 	
 
 func _on_Fora_area_entered(area):
-	print('aAAsAasASAsSAsASSASASaSAS')
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
 		colisaoPlayer = true
 	pass	
