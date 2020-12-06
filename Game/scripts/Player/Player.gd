@@ -192,7 +192,7 @@ func _physics_process(delta):
 # -------------------------------------------------------> SOCO <------------------------------------------------------
 func punch():
 	if soco == 0:
-		acertou_soco = 1
+		acertou_soco = 0
 		soco = 1
 		tempo_soco = 0.0
 		vel_soco = sentido * VEL_SOCO
@@ -560,6 +560,7 @@ func _on_Mao_area_entered(area):
 		return
 	
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self and acertou_soco == 0):
+		print("Dei dano")
 		area.get_parent().vida -= DANO_SOCO
 		acertou_soco = 1
 		if area.get_parent().player == 1:
@@ -580,9 +581,6 @@ func _on_Mao_area_entered(area):
 			pass
 			
 		area.get_parent().socado(sentido)
-		
-		
-	
 	
 	pass
 
