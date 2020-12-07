@@ -41,15 +41,20 @@ var stunado = 0
 
 var lento = 0
 
+signal my_signal
+
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
 func _ready():
+	connect("my_signal", self, "_on_Enemy_my_signal")
+	var scene = get_parent()
+	scene.connect("my_signal", self, "_on_Enemy_my_signal")
 	if self.get_parent().get_groups().has("Floresta"):
 		VEL_KNOCK_BACK = 2*MAX_VEL_KNOCK_BACK
 		DURACAO_KNOCK_BACK = 2*DURACAO_KNOCK_BACK
 		$Animacao.animation = "Player 2"
 	soco = 0
 	sentido = -1
-	vida = 1000
+	vida = 50
 	mana = 100
 	knock_back = 0
 	ocupado = 0
@@ -60,7 +65,7 @@ func _ready():
 func _process(delta):
 	
 	if vida <= 0:
-		$Sprite.play("Dead")
+		morte()
 	
 	mana += TAXA_MANA*10 * delta
 	
@@ -75,7 +80,7 @@ func _physics_process(delta):
 	SPEED = MAX_SPEED/2
 	
 	if vida <= 0:
-		$Sprite.play("Dead")
+		morte()
 		return
 		
 	if knock_back == 0 and stunado == 0: 
@@ -165,7 +170,7 @@ func colideComPlayer():
 # -----------------------------------------------------> CONTROLES <----------------------------------------------------
 func move(delta):
 	if vida <= 0:
-		$Sprite.play("Dead")
+		morte()
 		return
 	
 	#print(lento)
@@ -275,4 +280,10 @@ func _on_Fora_area_entered(area):
 func _on_Fora_area_exited(area):
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
 		colisaoPlayer = false
+	pass
+	
+func morte():
+	emit_signal("my_signal")
+	$Sprite.play("Dead")
+	#get_parent().remove_child(self)
 	pass
