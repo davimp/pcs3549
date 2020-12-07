@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://spawner.gd" type="Script" id=1]
+[ext_resource path="res://cenas/Enemy.tscn" type="PackedScene" id=2]
+
+[node name="spawner" type="Position2D"]
+position = Vector2( 251.805, 121.448 )
+script = ExtResource( 1 )
+spawnScene = ExtResource( 2 )
+timerPath = NodePath("timer")
+minWaitTime = 1.0
+maxWaitTime = 3.0
+
+[node name="timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="timer" to="." method="_on_timer_timeout"]
