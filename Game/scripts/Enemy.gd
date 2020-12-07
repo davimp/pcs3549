@@ -41,17 +41,17 @@ var stunado = 0
 
 var lento = 0
 
+export var tipo = 2
+# Se tipo = 0, o inimigo é alien
+# Se tipo = 1, o inimigo é bully
+# Se tipo = 2, o inimigo é senhor barriga
+
 signal my_signal
 
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
 func _ready():
-	connect("my_signal", self, "_on_Enemy_my_signal")
-	var scene = get_parent()
-	scene.connect("my_signal", self, "_on_Enemy_my_signal")
-	if self.get_parent().get_groups().has("Floresta"):
-		VEL_KNOCK_BACK = 2*MAX_VEL_KNOCK_BACK
-		DURACAO_KNOCK_BACK = 2*DURACAO_KNOCK_BACK
-		$Animacao.animation = "Player 2"
+	connect("my_signal", get_parent(), "_on_Enemy_my_signal")
+	
 	soco = 0
 	sentido = -1
 	vida = 50
@@ -106,7 +106,13 @@ func punch():
 		soco = 1
 		tempo_soco = 0.0
 		vel_soco = sentido * VEL_SOCO
-		$Sprite.play("Punch")
+		if tipo == 0:
+			$Sprite.play("Punch")
+		elif tipo == 1:
+			$Sprite.play("bullyPunch")
+		elif tipo == 2:
+			$Sprite.play("senhorBarrigaPunch")
+		
 		var sound = AudioStreamPlayer2D.new();
 		self.add_child(sound);
 		sound.stream = load("res://sounds/Woosh-Mark_DiAngelo-4778593.wav");
@@ -114,7 +120,6 @@ func punch():
 		sound.play();
 		#print(soco)
 		#print(teste)
-		print("SOCO")
 
 func socar(delta):  
 	if soco != 0:
@@ -128,7 +133,12 @@ func socar(delta):
 		vel_soco = 0;
 		$Mao.position.x = 0
 		tempo_soco = 0
-		$Sprite.play("Idle")
+		if tipo == 0:
+			$Sprite.play("Idle")
+		elif tipo == 1:
+			$Sprite.play("bullyRun")
+		elif tipo == 2:
+			$Sprite.play("senhorBarrigaRun")
 	
 	if soco == 1:
 		$Mao.position = sign(vel_soco) * sentido * $Mao.position 
@@ -149,21 +159,11 @@ func socado(direcao):
 	motion.x = direcao * VEL_KNOCK_BACK
 
 func empurrao(delta):
-	
-	
 	tempo_knock_back += delta
 	
 	if tempo_knock_back >= DURACAO_KNOCK_BACK:
 		knock_back = 0
 		motion.x = 0
-	
-	pass
-
-# -----------------------------------------------------> BASQUETE <-----------------------------------------------------
-
-func colideComPlayer():
-	
-	
 	
 	pass
 
@@ -220,12 +220,23 @@ func move(delta):
 		sentido = 1
 		$Sprite.flip_h = true
 		if soco == 0 and not colisaoPlayer:
-			$Sprite.play("Run")
+			if tipo == 0:
+				$Sprite.play("Run")
+			elif tipo == 1:
+				$Sprite.play("bullyRun")
+			elif tipo == 2:
+				$Sprite.play("senhorBarrigaRun")
+
 	elif motion.x < 0:
 		sentido = -1
 		$Sprite.flip_h = false
 		if soco == 0 and not colisaoPlayer:
-			$Sprite.play("Run")
+			if tipo == 0:
+				$Sprite.play("Run")
+			elif tipo == 1:
+				$Sprite.play("bullyRun")
+			elif tipo == 2:
+				$Sprite.play("senhorBarrigaRun")
 	if soco == 0 and colisaoPlayer and abs(self.position.y - self.get_parent().get_node("Player").position.y) <= 10*erro:
 		punch()
 	#else:
@@ -284,6 +295,5 @@ func _on_Fora_area_exited(area):
 	
 func morte():
 	emit_signal("my_signal")
-	$Sprite.play("Dead")
-	#get_parent().remove_child(self)
+	get_parent().remove_child(self)
 	pass
