@@ -5,6 +5,8 @@ export var idade = 0
 export var dinheiro = 400
 const N_IDADES = 4
 var nomeIdade = ["baby", "hiroshi", "adult", "old"]
+const DANOIDADE = [50, 100, 150, 130]
+const VIDAIDADE = [500, 1000, 900, 750]
 
 const MAX_SPEED = 400
 
@@ -54,6 +56,19 @@ func _ready():
 	ocupado = 0
 	$Bolhas.visible = 0
 	
+func muda_atributos_idade():
+	
+	
+#	match [expression]:
+#    [pattern](s):
+#        [block]
+#    [pattern](s):
+#        [block]
+#    [pattern](s):
+#        [block]
+	
+	pass
+	
 # --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
 func _process(delta):
 	#print(dinheiro)
@@ -65,10 +80,7 @@ func _process(delta):
 	if mana > 1000:
 		mana = 1000
 	
-	if player == 1:
-		self.get_parent().get_node("GUI").p1_energy_bar.value = mana
-	elif player == 2:
-		self.get_parent().get_node("GUI").p2_energy_bar.value = mana
+	self.get_parent().get_node("GUI").p1_energy_bar.value = mana
 	
 	pass
 
