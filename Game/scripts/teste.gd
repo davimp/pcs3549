@@ -33,6 +33,9 @@ func envelhece():
 		pass
 	pass
 		
+func _process(delta):
+	$GUI.get_node("Dinheiro").text = "$" + str($Player.dinheiro)
+	$GUI.get_node("Waves").text = "Wave " + str(wave_atual + 1)
 
 func _on_Player_morri():
 	var scene = load("res://cenas/Fim.tscn")

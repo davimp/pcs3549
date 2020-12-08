@@ -3,7 +3,7 @@ extends TextureButton
 var cenaTorreta = preload("res://cenas/Torreta.tscn")
 var cenaEspinho = preload("res://cenas/Espinho.tscn")
 var cena = [cenaTorreta, cenaEspinho]
-var preco = [100, 200]
+var preco = [200, 100]
 var sprite
 
 var pos = 0
@@ -16,24 +16,26 @@ func _ready():
 func _on_Right_button_up():
 	if pos < MAX:
 		sprite[pos].visible = false
+		pos = pos + 1		
 		$Preco.text = str(preco[pos])
-		pos = pos + 1
 		sprite[pos].visible = true
 		
 func _on_Left_button_up():
 	if pos > 0:
 		sprite[pos].visible = false
-		$Preco.text = str(preco[pos])
 		pos = pos - 1
+		$Preco.text = str(preco[pos])
 		sprite[pos].visible = true
 
 var click = -1
 func _process(delta):
 	if click == 1:
-		var nova = cena[pos].instance()
-		nova.position.x = 100
-		nova.position.y = 100
-		get_parent().add_child(nova)
+		if get_parent().get_node("Player").dinheiro >= preco[pos]:
+			get_parent().get_node("Player").dinheiro -= preco[pos]
+			var nova = cena[pos].instance()
+			nova.position.x = 100
+			nova.position.y = 100
+			get_parent().add_child(nova)
 		click = 0
 
 func _on_Timer_timeout():
