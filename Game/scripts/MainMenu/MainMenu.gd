@@ -15,7 +15,6 @@ var number_of_options = 4
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	logo.play();
 	seta.rect_position.x = new_game.rect_position.x + menu.rect_position.x - 50
 	seta.rect_position.y = new_game.rect_position.y + menu.rect_position.y
 	sombra.position = seta.rect_position
@@ -72,5 +71,4 @@ func _input(event):
 	pass
 
 func _process(delta):
-	roleta.rotation += delta
 	pass

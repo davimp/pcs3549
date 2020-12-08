@@ -1,57 +1,69 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://scripts/MainMenu/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://cenas/Background.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/MainMenu/sprites/roleta.png" type="Texture" id=3]
-[ext_resource path="res://assets/MainMenu/fonts/power_pixel-7.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://assets/logo1.png" type="Texture" id=5]
-[ext_resource path="res://assets/logo2.png" type="Texture" id=6]
-[ext_resource path="res://assets/logo3.png" type="Texture" id=7]
-[ext_resource path="res://assets/logo4.png" type="Texture" id=8]
-[ext_resource path="res://assets/logo5.png" type="Texture" id=9]
-[ext_resource path="res://assets/logo6.png" type="Texture" id=10]
-[ext_resource path="res://assets/logo7.png" type="Texture" id=11]
-[ext_resource path="res://assets/logo0.png" type="Texture" id=12]
-[ext_resource path="res://assets/MainMenu/sprites/seta.png" type="Texture" id=13]
-[ext_resource path="res://assets/MainMenu/sprites/hiroshiIdle0.png" type="Texture" id=14]
-[ext_resource path="res://assets/MainMenu/sprites/hiroshiIdle1.png" type="Texture" id=15]
-[ext_resource path="res://assets/Player/blackPunch0.png" type="Texture" id=16]
-[ext_resource path="res://assets/Player/blackPunch1.png" type="Texture" id=17]
-[ext_resource path="res://assets/Player/alienIdle0.png" type="Texture" id=18]
-[ext_resource path="res://assets/Player/alienIdle1.png" type="Texture" id=19]
-[ext_resource path="res://sounds/5834464992165888.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/MainMenu/fonts/power_pixel-7.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://assets/MainMenu/sprites/seta.png" type="Texture" id=4]
+[ext_resource path="res://assets/MainMenu/sprites/hiroshiIdle0.png" type="Texture" id=5]
+[ext_resource path="res://assets/MainMenu/sprites/hiroshiIdle1.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/blackPunch0.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/blackPunch1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/alienIdle0.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/alienIdle1.png" type="Texture" id=10]
+[ext_resource path="res://sounds/5834464992165888.wav" type="AudioStream" id=11]
+[ext_resource path="res://assets/Player/oldIdle0.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/oldIdle1.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/adultIdle0.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player/adultIdle1.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player/babyIdle0.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/babyIdle1.png" type="Texture" id=17]
 
 [sub_resource type="DynamicFont" id=1]
 size = 48
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="DynamicFont" id=2]
-font_data = ExtResource( 4 )
+font_data = ExtResource( 3 )
 
 [sub_resource type="SpriteFrames" id=3]
-resource_local_to_scene = true
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "default",
-"speed": 3.0
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "alien",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
-}, {
+} ]
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
 "frames": [ ExtResource( 16 ), ExtResource( 17 ) ],
 "loop": true,
-"name": "New Anim",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 18 ), ExtResource( 19 ) ],
-"loop": true,
-"name": "alien",
+"name": "default",
 "speed": 5.0
 } ]
 
@@ -79,18 +91,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Roleta" type="Sprite" parent="MarginContainer"]
-position = Vector2( 608.571, 354.388 )
-scale = Vector2( 0.848007, 0.830633 )
-texture = ExtResource( 3 )
-
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer"]
 anchor_top = 0.5
 anchor_bottom = 0.5
-margin_left = 100.0
-margin_top = -179.5
-margin_right = 446.0
-margin_bottom = 179.5
+margin_left = 106.802
+margin_top = -170.537
+margin_right = 452.802
+margin_bottom = 235.463
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
@@ -99,46 +106,40 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Label" parent="MarginContainer/MenuOptions"]
-margin_top = 15.0
+margin_top = 39.0
 margin_right = 346.0
-margin_bottom = 63.0
+margin_bottom = 87.0
 rect_pivot_offset = Vector2( 0, 24 )
 custom_fonts/font = SubResource( 1 )
 text = "New Game"
 
 [node name="Options" type="Label" parent="MarginContainer/MenuOptions"]
-margin_top = 93.0
+margin_top = 117.0
 margin_right = 346.0
-margin_bottom = 141.0
+margin_bottom = 165.0
 custom_fonts/font = SubResource( 1 )
 text = "Options"
 
 [node name="Credits" type="Label" parent="MarginContainer/MenuOptions"]
-margin_top = 171.0
+margin_top = 195.0
 margin_right = 346.0
-margin_bottom = 219.0
+margin_bottom = 243.0
 custom_fonts/font = SubResource( 1 )
 text = "Credits"
 
 [node name="QuitGame" type="Label" parent="MarginContainer/MenuOptions"]
-margin_top = 249.0
+margin_top = 273.0
 margin_right = 346.0
-margin_bottom = 297.0
+margin_bottom = 321.0
 custom_fonts/font = SubResource( 1 )
 text = "QUIT GAME"
 
 [node name="Version" type="Label" parent="MarginContainer/MenuOptions"]
-margin_top = 327.0
+margin_top = 351.0
 margin_right = 346.0
-margin_bottom = 343.0
+margin_bottom = 367.0
 custom_fonts/font = SubResource( 2 )
-text = "version 1.2"
-
-[node name="Logo" type="AnimatedSprite" parent="MarginContainer"]
-position = Vector2( 640, 107.018 )
-scale = Vector2( 1.35401, 1.56567 )
-frames = SubResource( 3 )
-frame = 5
+text = "version 1.0"
 
 [node name="Seta" type="TextureRect" parent="."]
 visible = false
@@ -146,30 +147,59 @@ margin_left = 34.817
 margin_top = 185.358
 margin_right = 74.817
 margin_bottom = 225.358
-texture = ExtResource( 13 )
+texture = ExtResource( 4 )
 stretch_mode = 3
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 951.371, 402.876 )
-scale = Vector2( 8.30729, 8.75274 )
-frames = SubResource( 4 )
-frame = 1
-playing = true
-
 [node name="AnimatedSprite2" type="AnimatedSprite" parent="."]
-position = Vector2( 64.2297, 214.027 )
+position = Vector2( 65.5901, 249.397 )
 scale = Vector2( 0.965669, 0.921679 )
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 animation = "New Anim"
+frame = 1
 playing = true
 flip_h = true
 
+[node name="NewGame2" type="Label" parent="."]
+margin_left = 149.645
+margin_top = 63.2073
+margin_right = 802.645
+margin_bottom = 111.207
+rect_scale = Vector2( 1.5, 1.5 )
+rect_pivot_offset = Vector2( 0, 24 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.168627, 0.623529, 0.92549, 1 )
+text = "A VIDA DE HIROSHI"
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 20 )
+stream = ExtResource( 11 )
 volume_db = -16.545
 pitch_scale = 1.25
 autoplay = true
+
+[node name="Old" type="AnimatedSprite" parent="."]
+position = Vector2( 1105.98, 403.495 )
+scale = Vector2( 7, 7 )
+frames = SubResource( 4 )
+playing = true
+
+[node name="Adult" type="AnimatedSprite" parent="."]
+position = Vector2( 927.514, 407.061 )
+scale = Vector2( 7, 7 )
+frames = SubResource( 5 )
+playing = true
+
+[node name="hiroshi" type="AnimatedSprite" parent="."]
+position = Vector2( 752.996, 422.678 )
+scale = Vector2( 6.4, 6.4 )
+frames = SubResource( 3 )
+playing = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 605.525, 453.757 )
+scale = Vector2( 5, 5 )
+frames = SubResource( 6 )
+playing = true
 
