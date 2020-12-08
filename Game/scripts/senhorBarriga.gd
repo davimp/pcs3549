@@ -43,6 +43,13 @@ var lento = 0
 
 signal my_signal
 
+var last_damage = -1
+# 0 se foi player
+# 1 se nao foi player
+
+const DINHEIRO0 = 50
+const DINHEIRO1 = 10
+
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
 func _ready():
 	connect("my_signal", get_parent(), "_on_Enemy_my_signal")
@@ -270,6 +277,10 @@ func _on_Fora_area_exited(area):
 
 func morte():
 	emit_signal("my_signal")
+	if last_damage == 0:
+		get_parent().get_node("Player").dinheiro += DINHEIRO0
+	elif last_damage == 1:
+		get_parent().get_node("Player").dinheiro += DINHEIRO1
 	get_parent().remove_child(self)
 	$Sprite.play("Dead")
 	pass

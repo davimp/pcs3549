@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/GUI/life_icon.png" type="Texture" id=2]
@@ -7,6 +7,11 @@
 [ext_resource path="res://assets/GUI/energy_icon.png" type="Texture" id=5]
 [ext_resource path="res://assets/GUI/energy_bar.png" type="Texture" id=6]
 [ext_resource path="res://assets/GUI/energy_fill.png" type="Texture" id=7]
+[ext_resource path="res://assets/MainMenu/fonts/power_pixel-7.ttf" type="DynamicFontData" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 8 )
 
 [node name="GUI" type="Node2D"]
 script = ExtResource( 1 )
@@ -77,4 +82,12 @@ margin_bottom = 37.0
 value = 100.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 266.799
+margin_top = 3.95087
+margin_right = 396.799
+margin_bottom = 35.9509
+custom_fonts/font = SubResource( 1 )
+text = "$400 "
 
