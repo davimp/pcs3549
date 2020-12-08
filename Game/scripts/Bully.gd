@@ -226,8 +226,6 @@ func move(delta):
 
 
 func _on_Mao_area_entered(area):
-	#print("'1'" + String(player) + " " + String(area.get_groups()) + " socao = " + String(soco)) 
-	
 	if(soco == 0):
 		return
 	
