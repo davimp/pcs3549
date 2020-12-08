@@ -1,91 +1,91 @@
 [gd_scene load_steps=101 format=2]
 
 [ext_resource path="res://scripts/Player/Player.gd" type="Script" id=1]
-[ext_resource path="res://assets/Player/babyRun0.png" type="Texture" id=2]
-[ext_resource path="res://assets/Player/babyRun1.png" type="Texture" id=3]
-[ext_resource path="res://assets/Player/babyRun2.png" type="Texture" id=4]
-[ext_resource path="res://assets/Player/babyRun3.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/babyRun4.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/babyRun5.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/babyRun6.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/babyRun7.png" type="Texture" id=9]
-[ext_resource path="res://assets/Player/babyRun8.png" type="Texture" id=10]
-[ext_resource path="res://assets/Player/babyRun9.png" type="Texture" id=11]
-[ext_resource path="res://assets/Player/babyPunch0.png" type="Texture" id=12]
-[ext_resource path="res://assets/Player/babyPunch1.png" type="Texture" id=13]
-[ext_resource path="res://assets/Player/oldDead0.png" type="Texture" id=14]
-[ext_resource path="res://assets/Player/oldDead1.png" type="Texture" id=15]
-[ext_resource path="res://assets/Player/oldDead2.png" type="Texture" id=16]
-[ext_resource path="res://assets/Player/oldDead3.png" type="Texture" id=17]
-[ext_resource path="res://assets/Player/oldDead4.png" type="Texture" id=18]
-[ext_resource path="res://assets/Poderes/hiroshiLaser2.png" type="Texture" id=19]
-[ext_resource path="res://assets/Poderes/hiroshiLaser3.png" type="Texture" id=20]
-[ext_resource path="res://assets/Poderes/hiroshiLaser1.png" type="Texture" id=21]
-[ext_resource path="res://assets/Player/oldIdle0.png" type="Texture" id=22]
-[ext_resource path="res://assets/Player/oldIdle1.png" type="Texture" id=23]
-[ext_resource path="res://assets/Player/adultRun0.png" type="Texture" id=24]
-[ext_resource path="res://assets/Player/adultRun1.png" type="Texture" id=25]
-[ext_resource path="res://assets/Player/adultRun2.png" type="Texture" id=26]
-[ext_resource path="res://assets/Player/adultRun3.png" type="Texture" id=27]
-[ext_resource path="res://assets/Player/adultRun4.png" type="Texture" id=28]
-[ext_resource path="res://assets/Player/adultRun5.png" type="Texture" id=29]
-[ext_resource path="res://assets/Player/adultRun6.png" type="Texture" id=30]
-[ext_resource path="res://assets/Player/adultRun7.png" type="Texture" id=31]
-[ext_resource path="res://assets/Player/adultRun8.png" type="Texture" id=32]
-[ext_resource path="res://assets/Player/adultRun9.png" type="Texture" id=33]
-[ext_resource path="res://assets/Player/babyDead0.png" type="Texture" id=34]
-[ext_resource path="res://assets/Player/babyDead1.png" type="Texture" id=35]
-[ext_resource path="res://assets/Player/babyDead2.png" type="Texture" id=36]
-[ext_resource path="res://assets/Player/babyDead3.png" type="Texture" id=37]
-[ext_resource path="res://assets/Player/babyDead4.png" type="Texture" id=38]
-[ext_resource path="res://assets/Player/adultPunch0.png" type="Texture" id=39]
-[ext_resource path="res://assets/Player/adultPunch1.png" type="Texture" id=40]
-[ext_resource path="res://assets/Player/oldRun0.png" type="Texture" id=41]
-[ext_resource path="res://assets/Player/oldRun2.png" type="Texture" id=42]
-[ext_resource path="res://assets/Player/oldRun3.png" type="Texture" id=43]
-[ext_resource path="res://assets/Player/oldRun4.png" type="Texture" id=44]
-[ext_resource path="res://assets/Player/oldRun1.png" type="Texture" id=45]
-[ext_resource path="res://assets/Player/oldRun5.png" type="Texture" id=46]
-[ext_resource path="res://assets/Player/oldRun7.png" type="Texture" id=47]
-[ext_resource path="res://assets/Player/oldRun6.png" type="Texture" id=48]
-[ext_resource path="res://assets/Player/oldRun8.png" type="Texture" id=49]
-[ext_resource path="res://assets/Player/oldRun9.png" type="Texture" id=50]
-[ext_resource path="res://assets/Player/hiroshiIdle0.png" type="Texture" id=51]
-[ext_resource path="res://assets/Player/hiroshiIdle1.png" type="Texture" id=52]
-[ext_resource path="res://assets/Player/adultIdle0.png" type="Texture" id=53]
-[ext_resource path="res://assets/Player/adultIdle1.png" type="Texture" id=54]
-[ext_resource path="res://assets/Player/alienIdle0.png" type="Texture" id=55]
-[ext_resource path="res://assets/Player/alienIdle1.png" type="Texture" id=56]
-[ext_resource path="res://assets/Player/alienPunch1.png" type="Texture" id=57]
-[ext_resource path="res://assets/Player/alienPunch0.png" type="Texture" id=58]
-[ext_resource path="res://assets/Player/oldPunch0.png" type="Texture" id=59]
-[ext_resource path="res://assets/Player/oldPunch1.png" type="Texture" id=60]
-[ext_resource path="res://assets/Player/hiroshiDead0.png" type="Texture" id=61]
-[ext_resource path="res://assets/Player/hiroshiDead1.png" type="Texture" id=62]
-[ext_resource path="res://assets/Player/hiroshiDead2.png" type="Texture" id=63]
-[ext_resource path="res://assets/Player/hiroshiDead3.png" type="Texture" id=64]
-[ext_resource path="res://assets/Player/hiroshiDead4.png" type="Texture" id=65]
-[ext_resource path="res://assets/Player/hiroshiPunch1.png" type="Texture" id=66]
-[ext_resource path="res://assets/Player/hiroshiPunch2.png" type="Texture" id=67]
-[ext_resource path="res://assets/Player/alienRun0.png" type="Texture" id=68]
-[ext_resource path="res://assets/Player/alienRun1.png" type="Texture" id=69]
-[ext_resource path="res://assets/Player/babyIdle0.png" type="Texture" id=70]
-[ext_resource path="res://assets/Player/babyIdle1.png" type="Texture" id=71]
-[ext_resource path="res://assets/Player/adultDead0.png" type="Texture" id=72]
-[ext_resource path="res://assets/Player/adultDead1.png" type="Texture" id=73]
-[ext_resource path="res://assets/Player/adultDead2.png" type="Texture" id=74]
-[ext_resource path="res://assets/Player/adultDead3.png" type="Texture" id=75]
-[ext_resource path="res://assets/Player/adultDead4.png" type="Texture" id=76]
-[ext_resource path="res://assets/Player/hiroshiRun0.png" type="Texture" id=77]
-[ext_resource path="res://assets/Player/hiroshiRun1.png" type="Texture" id=78]
-[ext_resource path="res://assets/Player/hiroshiRun2.png" type="Texture" id=79]
-[ext_resource path="res://assets/Player/hiroshiRun3.png" type="Texture" id=80]
-[ext_resource path="res://assets/Player/hiroshiRun4.png" type="Texture" id=81]
-[ext_resource path="res://assets/Player/hiroshiRun5.png" type="Texture" id=82]
-[ext_resource path="res://assets/Player/hiroshiRun6.png" type="Texture" id=83]
-[ext_resource path="res://assets/Player/hiroshiRun7.png" type="Texture" id=84]
-[ext_resource path="res://assets/Player/hiroshiRun8.png" type="Texture" id=85]
-[ext_resource path="res://assets/Player/hiroshiRun9.png" type="Texture" id=86]
+[ext_resource path="res://assets/Player/adultDead0.png" type="Texture" id=2]
+[ext_resource path="res://assets/Player/adultDead1.png" type="Texture" id=3]
+[ext_resource path="res://assets/Player/adultDead2.png" type="Texture" id=4]
+[ext_resource path="res://assets/Player/adultDead3.png" type="Texture" id=5]
+[ext_resource path="res://assets/Player/adultDead4.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/hiroshiRun0.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/hiroshiRun1.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/hiroshiRun2.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/hiroshiRun3.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/hiroshiRun4.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player/hiroshiRun5.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/hiroshiRun6.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/hiroshiRun7.png" type="Texture" id=14]
+[ext_resource path="res://assets/Player/hiroshiRun8.png" type="Texture" id=15]
+[ext_resource path="res://assets/Player/hiroshiRun9.png" type="Texture" id=16]
+[ext_resource path="res://assets/Player/alienPunch1.png" type="Texture" id=17]
+[ext_resource path="res://assets/Player/alienPunch0.png" type="Texture" id=18]
+[ext_resource path="res://assets/Player/oldPunch0.png" type="Texture" id=19]
+[ext_resource path="res://assets/Player/oldPunch1.png" type="Texture" id=20]
+[ext_resource path="res://assets/Player/hiroshiDead0.png" type="Texture" id=21]
+[ext_resource path="res://assets/Player/hiroshiDead1.png" type="Texture" id=22]
+[ext_resource path="res://assets/Player/hiroshiDead2.png" type="Texture" id=23]
+[ext_resource path="res://assets/Player/hiroshiDead3.png" type="Texture" id=24]
+[ext_resource path="res://assets/Player/hiroshiDead4.png" type="Texture" id=25]
+[ext_resource path="res://assets/Player/hiroshiPunch1.png" type="Texture" id=26]
+[ext_resource path="res://assets/Player/hiroshiPunch2.png" type="Texture" id=27]
+[ext_resource path="res://assets/Player/alienRun0.png" type="Texture" id=28]
+[ext_resource path="res://assets/Player/alienRun1.png" type="Texture" id=29]
+[ext_resource path="res://assets/Player/babyIdle0.png" type="Texture" id=30]
+[ext_resource path="res://assets/Player/babyIdle1.png" type="Texture" id=31]
+[ext_resource path="res://assets/Player/babyRun0.png" type="Texture" id=32]
+[ext_resource path="res://assets/Player/babyRun1.png" type="Texture" id=33]
+[ext_resource path="res://assets/Player/babyRun2.png" type="Texture" id=34]
+[ext_resource path="res://assets/Player/babyRun3.png" type="Texture" id=35]
+[ext_resource path="res://assets/Player/babyRun4.png" type="Texture" id=36]
+[ext_resource path="res://assets/Player/babyRun5.png" type="Texture" id=37]
+[ext_resource path="res://assets/Player/babyRun6.png" type="Texture" id=38]
+[ext_resource path="res://assets/Player/babyRun7.png" type="Texture" id=39]
+[ext_resource path="res://assets/Player/babyRun8.png" type="Texture" id=40]
+[ext_resource path="res://assets/Player/babyRun9.png" type="Texture" id=41]
+[ext_resource path="res://assets/Player/alienIdle0.png" type="Texture" id=42]
+[ext_resource path="res://assets/Player/alienIdle1.png" type="Texture" id=43]
+[ext_resource path="res://assets/Player/hiroshiIdle0.png" type="Texture" id=44]
+[ext_resource path="res://assets/Player/hiroshiIdle1.png" type="Texture" id=45]
+[ext_resource path="res://assets/Player/adultIdle0.png" type="Texture" id=46]
+[ext_resource path="res://assets/Player/adultIdle1.png" type="Texture" id=47]
+[ext_resource path="res://assets/Player/adultRun0.png" type="Texture" id=48]
+[ext_resource path="res://assets/Player/adultRun1.png" type="Texture" id=49]
+[ext_resource path="res://assets/Player/adultRun2.png" type="Texture" id=50]
+[ext_resource path="res://assets/Player/adultRun3.png" type="Texture" id=51]
+[ext_resource path="res://assets/Player/adultRun4.png" type="Texture" id=52]
+[ext_resource path="res://assets/Player/adultRun5.png" type="Texture" id=53]
+[ext_resource path="res://assets/Player/adultRun6.png" type="Texture" id=54]
+[ext_resource path="res://assets/Player/adultRun7.png" type="Texture" id=55]
+[ext_resource path="res://assets/Player/adultRun8.png" type="Texture" id=56]
+[ext_resource path="res://assets/Player/adultRun9.png" type="Texture" id=57]
+[ext_resource path="res://assets/Player/adultPunch0.png" type="Texture" id=58]
+[ext_resource path="res://assets/Player/adultPunch1.png" type="Texture" id=59]
+[ext_resource path="res://assets/Player/oldRun0.png" type="Texture" id=60]
+[ext_resource path="res://assets/Player/oldRun2.png" type="Texture" id=61]
+[ext_resource path="res://assets/Player/oldRun3.png" type="Texture" id=62]
+[ext_resource path="res://assets/Player/oldRun4.png" type="Texture" id=63]
+[ext_resource path="res://assets/Player/oldRun1.png" type="Texture" id=64]
+[ext_resource path="res://assets/Player/oldRun5.png" type="Texture" id=65]
+[ext_resource path="res://assets/Player/oldRun7.png" type="Texture" id=66]
+[ext_resource path="res://assets/Player/oldRun6.png" type="Texture" id=67]
+[ext_resource path="res://assets/Player/oldRun8.png" type="Texture" id=68]
+[ext_resource path="res://assets/Player/oldRun9.png" type="Texture" id=69]
+[ext_resource path="res://assets/Player/oldDead0.png" type="Texture" id=70]
+[ext_resource path="res://assets/Player/oldDead1.png" type="Texture" id=71]
+[ext_resource path="res://assets/Player/oldDead2.png" type="Texture" id=72]
+[ext_resource path="res://assets/Player/oldDead3.png" type="Texture" id=73]
+[ext_resource path="res://assets/Player/oldDead4.png" type="Texture" id=74]
+[ext_resource path="res://assets/Poderes/hiroshiLaser2.png" type="Texture" id=75]
+[ext_resource path="res://assets/Poderes/hiroshiLaser3.png" type="Texture" id=76]
+[ext_resource path="res://assets/Poderes/hiroshiLaser1.png" type="Texture" id=77]
+[ext_resource path="res://assets/Player/oldIdle0.png" type="Texture" id=78]
+[ext_resource path="res://assets/Player/oldIdle1.png" type="Texture" id=79]
+[ext_resource path="res://assets/Player/babyDead0.png" type="Texture" id=80]
+[ext_resource path="res://assets/Player/babyDead1.png" type="Texture" id=81]
+[ext_resource path="res://assets/Player/babyDead2.png" type="Texture" id=82]
+[ext_resource path="res://assets/Player/babyDead3.png" type="Texture" id=83]
+[ext_resource path="res://assets/Player/babyDead4.png" type="Texture" id=84]
+[ext_resource path="res://assets/Player/babyPunch0.png" type="Texture" id=85]
+[ext_resource path="res://assets/Player/babyPunch1.png" type="Texture" id=86]
 [ext_resource path="res://assets/Poderes/bolha0.png" type="Texture" id=87]
 [ext_resource path="res://assets/Poderes/bolha1.png" type="Texture" id=88]
 [ext_resource path="res://assets/Poderes/bolha2.png" type="Texture" id=89]
@@ -97,105 +97,105 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "babyRun",
-"speed": 22.0
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "babyPunch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ), ExtResource( 17 ), ExtResource( 18 ) ],
-"loop": true,
-"name": "oldDead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
-"loop": false,
-"name": "Laser",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 22 ), ExtResource( 23 ) ],
-"loop": true,
-"name": "oldIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
-"loop": true,
-"name": "adultRun",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ) ],
-"loop": true,
-"name": "babyDead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 39 ), ExtResource( 40 ) ],
-"loop": true,
-"name": "adultPunch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ],
-"loop": true,
-"name": "oldRun",
-"speed": 22.0
-}, {
-"frames": [ ExtResource( 51 ), ExtResource( 52 ) ],
-"loop": true,
-"name": "hiroshiIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 53 ), ExtResource( 54 ) ],
-"loop": true,
-"name": "adultIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 55 ), ExtResource( 56 ) ],
-"loop": false,
-"name": "alienIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 57 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 58 ), ExtResource( 57 ) ],
-"loop": false,
-"name": "alienPunch",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ) ],
-"loop": true,
-"name": "oldPunch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
-"loop": true,
-"name": "hiroshiDead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 66 ), ExtResource( 67 ) ],
-"loop": true,
-"name": "hiroshiPunch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 68 ), ExtResource( 69 ) ],
-"loop": true,
-"name": "alienRun",
-"speed": 22.0
-}, {
-"frames": [ ExtResource( 70 ), ExtResource( 71 ) ],
-"loop": true,
-"name": "babyIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "adultDead",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ), ExtResource( 86 ) ],
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
 "loop": true,
 "name": "hiroshiRun",
 "speed": 22.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "alienPunch",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "oldPunch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "hiroshiDead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
+"loop": true,
+"name": "hiroshiPunch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 28 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "alienRun",
+"speed": 22.0
+}, {
+"frames": [ ExtResource( 30 ), ExtResource( 31 ) ],
+"loop": true,
+"name": "babyIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
+"loop": true,
+"name": "babyRun",
+"speed": 22.0
+}, {
+"frames": [ ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": false,
+"name": "alienIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": true,
+"name": "hiroshiIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "adultIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "adultRun",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "adultPunch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
+"loop": true,
+"name": "oldRun",
+"speed": 22.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ) ],
+"loop": true,
+"name": "oldDead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ) ],
+"loop": false,
+"name": "Laser",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 78 ), ExtResource( 79 ) ],
+"loop": true,
+"name": "oldIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ) ],
+"loop": true,
+"name": "babyDead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 85 ), ExtResource( 86 ) ],
+"loop": true,
+"name": "babyPunch",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
