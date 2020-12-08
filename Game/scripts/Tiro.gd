@@ -6,6 +6,7 @@ extends Node2D
 
 const SPEED = 100
 var sentido = 0
+var dano_tiro = 50
 # 0 é norte, 1 é leste, 2 é sul e 3 é oeste
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -26,6 +27,10 @@ func _process(delta):
 	if position.x > 1500 or position.x < 0:
 		get_parent().remove_child(self)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _on_Colisao_area_entered(area):
+	
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))):
+		area.get_parent().vida -= dano_tiro
+		get_parent().remove_child(self)
+		pass
+

@@ -21,7 +21,7 @@ var motion = Vector2()
 var sentido = -1
 
 const DANO_SOCO = 100
-const VEL_SOCO = 100
+const VEL_SOCO = 120
 const TEMPO_SOCO = 0.4
 var soco = 0
 var tempo_soco = 0.0
@@ -224,11 +224,11 @@ func socar(delta):
 		$Sprite.play(nomeIdade[idade] + "Idle")
 	
 	if soco == 1:
-		$Mao.position = sign(vel_soco) * sentido * $Mao.position 
+		#$Mao.position = sign(vel_soco) * sentido * $Mao.position 
 		vel_soco = sentido * VEL_SOCO
 		
 	elif soco == 2:
-		$Mao.position = - sign(vel_soco) * sentido * $Mao.position 
+		#$Mao.position = - sign(vel_soco) * sentido * $Mao.position 
 		vel_soco = - sentido * VEL_SOCO
 	
 	if soco != 0:
@@ -319,46 +319,8 @@ func control(delta):
 		if Input.is_key_pressed(KEY_L):
 			ativar_poder()
 		
-
 		pass
 		
-	elif player == 2:
-		
-		if Input.is_key_pressed(KEY_D):
-			motion.x = bebeu * SPEED
-			sentido = 1
-			$Sprite.flip_h = true
-			if soco == 0:
-				$Sprite.play("alienRun")
-			else:
-				#animação de Run + punch
-				pass
-		elif Input.is_key_pressed(KEY_A):
-			motion.x = - bebeu * SPEED
-			sentido = -1
-			$Sprite.flip_h = false
-			if soco == 0:
-				$Sprite.play("alienRun")
-			else:
-				#animação de Run + punch
-				pass
-		else:
-			motion.x = 0
-			if soco == 0:
-				$Sprite.play("alienIdle")
-		
-		if is_on_floor():
-			if Input.is_key_pressed(KEY_W):
-				motion.y = JUMP_HEIGHT
-				
-		#else:
-			#$Sprite.play("Jump")
-			
-		if Input.is_key_pressed(KEY_SPACE):
-			punch()
-	
-		if Input.is_key_pressed(KEY_Q):
-			ativar_poder()
 
 func control_vinicola(delta):
 	if vida <= 0:
@@ -621,28 +583,3 @@ func _on_Mao_body_exited(body):
 	if body.get_groups().has("bola"):
 		colisao = 0
 	pass # Replace with function body.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
