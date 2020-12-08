@@ -1,52 +1,37 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://scripts/Enemy.gd" type="Script" id=1]
-[ext_resource path="res://assets/Poderes/hiroshiLaser2.png" type="Texture" id=2]
-[ext_resource path="res://assets/Poderes/hiroshiLaser3.png" type="Texture" id=3]
-[ext_resource path="res://assets/Poderes/hiroshiLaser1.png" type="Texture" id=4]
-[ext_resource path="res://assets/Player/alienPunch1.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/alienPunch0.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/alienRun0.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/alienRun1.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/alienIdle0.png" type="Texture" id=9]
-[ext_resource path="res://assets/Player/alienIdle1.png" type="Texture" id=10]
+[ext_resource path="res://scripts/Bully.gd" type="Script" id=1]
+[ext_resource path="res://assets/Inimigos/bullly0.png" type="Texture" id=2]
+[ext_resource path="res://assets/Inimigos/bullyPunch.png" type="Texture" id=3]
+[ext_resource path="res://assets/Inimigos/bully1.png" type="Texture" id=4]
+[ext_resource path="res://assets/Inimigos/bully2.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ) ],
-"loop": false,
-"name": "Laser",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ) ],
 "loop": false,
 "name": "Punch",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 4 ), ExtResource( 2 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Run",
-"speed": 22.0
-}, {
-"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
-"loop": false,
-"name": "Idle",
 "speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11.9839, 24.147 )
+extents = Vector2( 11.969, 32.0143 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 5.61736, 3.53411 )
+extents = Vector2( 6.37955, 4.8751 )
 
 [sub_resource type="RectangleShape2D" id=4]
-extents = Vector2( 11.7764, 24.8158 )
+extents = Vector2( 11.7764, 31.0005 )
 
 [sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 14.5069, 31.7661 )
+extents = Vector2( 16.8297, 35.6108 )
 
-[node name="Enemy" type="KinematicBody2D" groups=[
+[node name="Bully" type="KinematicBody2D" groups=[
 "player",
 ]]
 script = ExtResource( 1 )
@@ -59,7 +44,7 @@ frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.250336, -1.75241 )
+position = Vector2( -2.20853, -1.44505 )
 shape = SubResource( 2 )
 
 [node name="Mao" type="Area2D" parent="." groups=[
@@ -78,12 +63,13 @@ collision_layer = 24576
 collision_mask = 24576
 
 [node name="Colisao" type="CollisionShape2D" parent="Corpo"]
-visible = false
+position = Vector2( -2.76622, 0.307358 )
 shape = SubResource( 4 )
 
 [node name="Fora" type="Area2D" parent="." groups=[
 "fora",
 ]]
+visible = false
 collision_layer = 24576
 collision_mask = 24576
 

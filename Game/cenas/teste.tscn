@@ -5,10 +5,10 @@
 [ext_resource path="res://assets/space.png" type="Texture" id=3]
 [ext_resource path="res://tres/new_tileset.tres" type="TileSet" id=4]
 [ext_resource path="res://cenas/Player.tscn" type="PackedScene" id=5]
-[ext_resource path="res://spawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://cenas/GUI.tscn" type="PackedScene" id=7]
-[ext_resource path="res://cenas/TowerDefense.tscn" type="PackedScene" id=8]
-[ext_resource path="res://cenas/Pausa.tscn" type="PackedScene" id=9]
+[ext_resource path="res://cenas/GUI.tscn" type="PackedScene" id=6]
+[ext_resource path="res://cenas/TowerDefense.tscn" type="PackedScene" id=7]
+[ext_resource path="res://cenas/Pausa.tscn" type="PackedScene" id=8]
+[ext_resource path="res://cenas/Bully.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -83,17 +83,17 @@ tile_data = PoolIntArray( -131043, 0, 0, 6, 0, 0, 16, 0, 0, 131101, 2, 0, 196644
 [node name="Player" parent="." instance=ExtResource( 5 )]
 position = Vector2( 599.828, 315.818 )
 
-[node name="spawner" parent="." instance=ExtResource( 6 )]
-position = Vector2( 145.881, 158.258 )
-
-[node name="GUI" parent="." instance=ExtResource( 7 )]
+[node name="GUI" parent="." instance=ExtResource( 6 )]
 position = Vector2( 0, 1.10803 )
 
-[node name="TowerDefense" parent="." instance=ExtResource( 8 )]
+[node name="TowerDefense" parent="." instance=ExtResource( 7 )]
 margin_left = 1155.79
 margin_top = 19.3722
 margin_right = 1255.79
 margin_bottom = 119.372
 
-[node name="Pausa" parent="." instance=ExtResource( 9 )]
+[node name="Pausa" parent="." instance=ExtResource( 8 )]
+
+[node name="Bully" parent="." instance=ExtResource( 9 )]
+position = Vector2( 72.0999, 167.326 )
 

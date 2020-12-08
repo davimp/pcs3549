@@ -4,7 +4,7 @@ var count
 
 func _ready():
   count = 0
-  $spawner.stop = 0
+#  $spawner.stop = 0
 
 func _on_Enemy_my_signal():
 	count += 1

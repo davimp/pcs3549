@@ -123,7 +123,7 @@ func socar(delta):
 		vel_soco = 0;
 		$Mao.position.x = 0
 		tempo_soco = 0
-		$Sprite.play("Idle")
+		$Sprite.play("Run")
 	
 	if soco == 1:
 		$Mao.position = sign(vel_soco) * sentido * $Mao.position 
@@ -211,6 +211,7 @@ func move(delta):
 		$Sprite.flip_h = false
 		if soco == 0 and not colisaoPlayer:
 			$Sprite.play("Run")
+	#print(soco)
 	if soco == 0 and colisaoPlayer and abs(self.position.y - self.get_parent().get_node("Player").position.y) <= 10*erro:
 		punch()
 	#else:
@@ -257,8 +258,8 @@ func _on_Mao_area_entered(area):
 	
 
 func _on_Fora_area_entered(area):
-	print("Fora")
-	#print(area.get_groups())
+	print("ok")
+	#print(area.get_groups()
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
 		colisaoPlayer = true
 	pass	
