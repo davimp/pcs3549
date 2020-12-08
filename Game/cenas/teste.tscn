@@ -50,7 +50,7 @@ points = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
 } ]
 1/z_index = 0
 
-[node name="Node2D" type="Node2D"]
+[node name="Teste" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="TileMap4" type="TileMap" parent="."]
@@ -85,6 +85,7 @@ position = Vector2( 599.828, 315.818 )
 
 [node name="spawner" parent="." instance=ExtResource( 6 )]
 position = Vector2( 61.1036, 154.257 )
+timerPath = NodePath("../../Teste/spawner/timer")
 
 [node name="GUI" parent="." instance=ExtResource( 7 )]
 position = Vector2( 0, 1.10803 )
@@ -97,3 +98,4 @@ margin_bottom = 107.129
 
 [node name="Pausa" parent="." instance=ExtResource( 9 )]
 
+[connection signal="morri" from="Player" to="." method="_on_Player_morri"]

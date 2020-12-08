@@ -1,0 +1,44 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/Fim.gd" type="Script" id=1]
+[ext_resource path="res://assets/MainMenu/sprites/pixil-frame-0(11).png" type="Texture" id=2]
+[ext_resource path="res://assets/MainMenu/fonts/power_pixel-7.ttf" type="DynamicFontData" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[node name="Fim" type="Node2D"]
+position = Vector2( 640, 360 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 5, 5 )
+texture = ExtResource( 2 )
+
+[node name="message" type="Label" parent="."]
+margin_left = -274.412
+margin_top = -178.745
+margin_right = 286.588
+margin_bottom = -114.745
+custom_fonts/font = SubResource( 1 )
+text = "Fim de jogo"
+
+[node name="result" type="Label" parent="."]
+margin_left = -395.009
+margin_top = 41.2625
+margin_right = 726.991
+margin_bottom = 105.263
+rect_scale = Vector2( 0.7, 0.7 )
+custom_fonts/font = SubResource( 1 )
+text = "VocÊ completou x waves"
+
+[node name="enter" type="Label" parent="."]
+margin_left = -189.849
+margin_top = 252.808
+margin_right = 565.151
+margin_bottom = 316.808
+rect_scale = Vector2( 0.5, 0.5 )
+custom_fonts/font = SubResource( 1 )
+text = "[ Press Enter ]"
+
