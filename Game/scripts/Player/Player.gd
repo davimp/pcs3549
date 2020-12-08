@@ -1,7 +1,8 @@
 extends KinematicBody2D
 
 export var player = 1
-export var idade = 1
+export var idade = 0
+const N_IDADES = 4
 
 var nomeIdade = ["baby", "hiroshi", "adult", "old"]
 
@@ -73,10 +74,7 @@ func _ready():
 	if self.get_parent().get_groups().has("Floresta"):
 		VEL_KNOCK_BACK = 2*MAX_VEL_KNOCK_BACK
 		DURACAO_KNOCK_BACK = 2*DURACAO_KNOCK_BACK
-#	if player == 1:
-#		$Animacao.animation = "Player 1"
-#	elif player == 2:
-#		$Animacao.animation = "Player 2"
+
 	soco = 0
 	sentido = -1
 	vida = 1000
