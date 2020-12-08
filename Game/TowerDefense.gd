@@ -12,13 +12,7 @@ const MAX = 1
 func _ready():
 	sprite = [$Torreta, $Espinho]
 	pass # Replace with function body.
-
-func _on_TowerDefense_button_up():
-	var nova = cena[pos].instance()
-	nova.position.x = 100
-	nova.position.y = 100
-	get_parent().add_child(nova)
-
+	
 func _on_Right_button_up():
 	if pos < MAX:
 		sprite[pos].visible = false
@@ -32,3 +26,24 @@ func _on_Left_button_up():
 		$Preco.text = str(preco[pos])
 		pos = pos - 1
 		sprite[pos].visible = true
+
+var click = -1
+func _process(delta):
+	if click == 1:
+		var nova = cena[pos].instance()
+		nova.position.x = 100
+		nova.position.y = 100
+		get_parent().add_child(nova)
+		click = 0
+
+func _on_Timer_timeout():
+	click = -1
+	$Timer.wait_time = 2
+	pass # Replace with function body.
+
+
+func _on_TowerDefense_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and click == -1:
+			click = 1
+	pass # Replace with function body.
