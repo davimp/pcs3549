@@ -52,6 +52,17 @@ func _ready():
 	ocupado = 0
 	$Bolhas.visible = 0
 	
+	
+# --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
+func _process(delta):
+	if vida <= 0:
+		$Sprite.play(nomeIdade[idade] + "Dead")
+		emit_signal("morri")
+	
+	pass
+
+# --------------------------------------> FUNÇÕES DOS ATRIBUTOS DAS IDADES <-------------------------------------
+
 func muda_atributos_idade():
 	
 	var idade_anterior = idade-1
@@ -64,18 +75,8 @@ func muda_atributos_idade():
 func relacao_vidas(idade_anterior, idade_atual):
 	if idade_anterior == -1:
 		idade_anterior += N_IDADES
-	print("ralcao =", (VIDAIDADE[idade]/VIDAIDADE[idade_anterior]))
 	return (VIDAIDADE[idade]/VIDAIDADE[idade_anterior])
 	
-	
-	
-# --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
-func _process(delta):
-	if vida <= 0:
-		$Sprite.play(nomeIdade[idade] + "Dead")
-		emit_signal("morri")
-	
-	pass
 
 # ---------------------------------------------------> FÍSICA <---------------------------------------------------------
 func _physics_process(delta):
