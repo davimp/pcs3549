@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scripts/GUI/GUI.gd" type="Script" id=1]
 [ext_resource path="res://assets/GUI/life_icon.png" type="Texture" id=2]
@@ -10,10 +10,6 @@
 [ext_resource path="res://assets/MainMenu/fonts/power_pixel-7.ttf" type="DynamicFontData" id=8]
 
 [sub_resource type="DynamicFont" id=1]
-size = 32
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=2]
 size = 32
 font_data = ExtResource( 8 )
 
@@ -87,19 +83,11 @@ value = 100.0
 texture_under = ExtResource( 6 )
 texture_progress = ExtResource( 7 )
 
-[node name="Dinheiro" type="Label" parent="."]
-margin_left = 268.027
-margin_top = 5.1786
-margin_right = 398.027
-margin_bottom = 37.1786
+[node name="Label" type="Label" parent="."]
+margin_left = 266.799
+margin_top = 3.95087
+margin_right = 396.799
+margin_bottom = 35.9509
 custom_fonts/font = SubResource( 1 )
 text = "$400 "
-
-[node name="Waves" type="Label" parent="."]
-margin_left = 267.646
-margin_top = 42.9707
-margin_right = 307.646
-margin_bottom = 74.9707
-custom_fonts/font = SubResource( 2 )
-text = "Wave 0"
 

@@ -16,7 +16,6 @@ margin_right = 50.0
 margin_bottom = 50.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-toggle_mode = true
 shortcut_in_tooltip = false
 expand = true
 script = ExtResource( 1 )
@@ -82,14 +81,6 @@ margin_bottom = 24.6948
 custom_fonts/font = SubResource( 1 )
 text = "200"
 
-[node name="Timer" type="Timer" parent="."]
-wait_time = 2.0
-autostart = true
-
-[connection signal="button_down" from="." to="." method="_on_TowerDefense_button_down"]
 [connection signal="button_up" from="." to="." method="_on_TowerDefense_button_up"]
-[connection signal="gui_input" from="." to="." method="_on_TowerDefense_gui_input"]
-[connection signal="gui_input" from="Fundo" to="." method="_on_Fundo_gui_input"]
 [connection signal="button_up" from="Right" to="." method="_on_Right_button_up"]
 [connection signal="button_up" from="Left" to="." method="_on_Left_button_up"]
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
