@@ -41,6 +41,8 @@ var normal = Vector2()
 
 var ocupado = 0
 
+signal morri
+
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
 func _ready():
 	if self.get_parent().get_groups().has("Floresta"):
@@ -71,9 +73,9 @@ func muda_atributos_idade():
 	
 # --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
 func _process(delta):
-	#print(dinheiro)
 	if vida <= 0:
 		$Sprite.play(nomeIdade[idade] + "Dead")
+		emit_signal("morri")
 	
 	mana += TAXA_MANA*10 * delta
 	
@@ -162,6 +164,7 @@ func empurrao(delta):
 func control(delta):
 	if vida <= 0:
 		$Sprite.play(nomeIdade[idade] + "Dead")
+		emit_signal("morri")
 		return
 	
 	#print(lento)
