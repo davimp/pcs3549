@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 export var player = 1
 export var idade = 1
+export var dinheiro = 400
 
 var nomeIdade = ["baby", "hiroshi", "adult", "old"]
 
@@ -65,7 +66,6 @@ const DURACAO_BEBADO = 5.0
 var bebeu = 1
 var tempo_bebado = 0.0
 
-
 var lento = 0
 
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
@@ -94,7 +94,7 @@ func _ready():
 	
 # --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
 func _process(delta):
-	
+	print(dinheiro)
 	if vida <= 0:
 		$Sprite.play(nomeIdade[idade] + "Dead")
 	
@@ -524,6 +524,7 @@ func _on_Mao_area_entered(area):
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self and acertou_soco == 0):
 		print("Dei dano")
 		area.get_parent().vida -= DANO_SOCO
+		area.get_parent().last_damage = 0
 		acertou_soco = 1
 		if area.get_parent().player == 1:
 			self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO

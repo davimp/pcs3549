@@ -28,9 +28,9 @@ func _process(delta):
 		get_parent().remove_child(self)
 
 func _on_Colisao_area_entered(area):
-	
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))):
+		area.get_parent().last_damage = 1
 		area.get_parent().vida -= dano_tiro
 		get_parent().remove_child(self)
-		pass
+		return
 
