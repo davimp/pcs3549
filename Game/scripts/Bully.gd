@@ -231,8 +231,6 @@ func move(delta):
 
 
 func _on_Mao_area_entered(area):
-	#print("'1'" + String(player) + " " + String(area.get_groups()) + " socao = " + String(soco)) 
-	
 	if(soco == 0):
 		return
 	
@@ -279,5 +277,5 @@ func morte():
 	elif last_damage == 1:
 		get_parent().get_node("Player").dinheiro += DINHEIRO1
 	get_parent().remove_child(self)
-	$Sprite.play("Dead")
+	#$Sprite.play("Dead")
 	pass

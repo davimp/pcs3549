@@ -15,7 +15,7 @@ func _ready():
 
 func _on_Enemy_my_signal():
 	count += 1
-	print("debug1: ", count)
+	#print("debug1: ", count)
 	if count >= monstros_por_wave:
 		print("Acabou a wave")
 		envelhece()
