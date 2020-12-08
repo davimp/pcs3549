@@ -3,6 +3,7 @@ extends TextureButton
 var cenaTorreta = preload("res://cenas/Torreta.tscn")
 var cenaEspinho = preload("res://cenas/Espinho.tscn")
 var cena = [cenaTorreta, cenaEspinho]
+var preco = [100, 200]
 var sprite
 
 var pos = 0
@@ -21,11 +22,13 @@ func _on_TowerDefense_button_up():
 func _on_Right_button_up():
 	if pos < MAX:
 		sprite[pos].visible = false
+		$Preco.text = str(preco[pos])
 		pos = pos + 1
 		sprite[pos].visible = true
 		
 func _on_Left_button_up():
 	if pos > 0:
 		sprite[pos].visible = false
+		$Preco.text = str(preco[pos])
 		pos = pos - 1
 		sprite[pos].visible = true

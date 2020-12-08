@@ -91,9 +91,9 @@ position = Vector2( 0, 1.10803 )
 
 [node name="TowerDefense" parent="." instance=ExtResource( 8 )]
 margin_left = 1155.79
-margin_top = 19.3722
+margin_top = 7.12881
 margin_right = 1255.79
-margin_bottom = 119.372
+margin_bottom = 107.129
 
 [node name="Pausa" parent="." instance=ExtResource( 9 )]
 
