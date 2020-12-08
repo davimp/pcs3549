@@ -17,8 +17,8 @@ const KB_TIME = 0.2
 var motion = Vector2()
 var sentido = -1
 
-const DANO_SOCO = 100
-const VEL_SOCO = 120
+var DANO_SOCO = 100
+var VEL_SOCO = 120
 const TEMPO_SOCO = 0.4
 var soco = 0
 var tempo_soco = 0.0
@@ -26,8 +26,6 @@ var vel_soco = 0.0
 var acertou_soco = 0
 
 var vida = 1000
-var mana = 100
-const TAXA_MANA = 50
 const MAX_VEL_KNOCK_BACK = 200
 const MAX_DURACAO_KNOCK_BACK = 0.2
 var VEL_KNOCK_BACK = 200
@@ -45,14 +43,10 @@ signal morri
 
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
 func _ready():
-	if self.get_parent().get_groups().has("Floresta"):
-		VEL_KNOCK_BACK = 2*MAX_VEL_KNOCK_BACK
-		DURACAO_KNOCK_BACK = 2*DURACAO_KNOCK_BACK
 
 	soco = 0
 	sentido = -1
-	vida = 1000
-	mana = 100
+	vida = VIDAIDADE[idade]
 	knock_back = 0
 	colisao = 0
 	ocupado = 0
@@ -60,29 +54,26 @@ func _ready():
 	
 func muda_atributos_idade():
 	
-	
-#	match [expression]:
-#    [pattern](s):
-#        [block]
-#    [pattern](s):
-#        [block]
-#    [pattern](s):
-#        [block]
-	
+	var idade_anterior = idade-1
+	if idade_anterior == -1:
+		idade_anterior += N_IDADES
+	vida = vida * relacao_vidas(idade_anterior, idade)
+	DANO_SOCO = DANOIDADE[idade]
 	pass
+	
+func relacao_vidas(idade_anterior, idade_atual):
+	if idade_anterior == -1:
+		idade_anterior += N_IDADES
+	print("ralcao =", (VIDAIDADE[idade]/VIDAIDADE[idade_anterior]))
+	return (VIDAIDADE[idade]/VIDAIDADE[idade_anterior])
+	
+	
 	
 # --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
 func _process(delta):
 	if vida <= 0:
 		$Sprite.play(nomeIdade[idade] + "Dead")
 		emit_signal("morri")
-	
-	mana += TAXA_MANA*10 * delta
-	
-	if mana > 1000:
-		mana = 1000
-	
-	self.get_parent().get_node("GUI").p1_energy_bar.value = mana
 	
 	pass
 

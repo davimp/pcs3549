@@ -13,6 +13,7 @@ func _ready():
 	$spawner.muda = 0
 	monstros_por_wave = $spawner.monstros_por_wave
 	wave_atual = $spawner.wave_atual
+	$GUI/HBoxContainer/P1Bars/LifeBar/Gauge.rect_scale.x = 0.5
 
 func _on_Enemy_my_signal():
 	count += 1
@@ -30,6 +31,10 @@ func _on_Enemy_my_signal():
 func envelhece():
 	if ((wave_atual+1) % WAVES_P_ENVELHECER == 0):
 		$Player.idade = ($Player.idade+1)%$Player.N_IDADES
+		$Player.muda_atributos_idade()
+		$GUI/HBoxContainer/P1Bars/LifeBar/Gauge.rect_scale.x = $Player.relacao_vidas($Player.idade, 1)
+		$GUI/HBoxContainer/P1Bars/LifeBar/Gauge.max_value = $Player.VIDAIDADE[$Player.idade]
+		$GUI/HBoxContainer/P1Bars/LifeBar/Gauge.value = $Player.vida
 		pass
 	pass
 		
