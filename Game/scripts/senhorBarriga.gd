@@ -282,5 +282,5 @@ func morte():
 	elif last_damage == 1:
 		get_parent().get_node("Player").dinheiro += DINHEIRO1
 	get_parent().remove_child(self)
-	$Sprite.play("Dead")
+	#$Sprite.play("Dead")
 	pass

@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 export var player = 1
-export var idade = 1
+export var idade = 0
 export var dinheiro = 400
 const N_IDADES = 4
 var nomeIdade = ["baby", "hiroshi", "adult", "old"]
@@ -56,7 +56,7 @@ func _ready():
 	
 # --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
 func _process(delta):
-	print(dinheiro)
+	#print(dinheiro)
 	if vida <= 0:
 		$Sprite.play(nomeIdade[idade] + "Dead")
 	
