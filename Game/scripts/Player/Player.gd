@@ -91,7 +91,6 @@ func _ready():
 	
 # --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
 func _process(delta):
-	print(dinheiro)
 	if vida <= 0:
 		$Sprite.play(nomeIdade[idade] + "Dead")
 	
