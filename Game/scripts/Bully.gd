@@ -231,7 +231,7 @@ func _on_Mao_area_entered(area):
 	if(soco == 0):
 		return
 	
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self and acertou_soco == 0):
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() == self.get_parent().get_node("Player") and acertou_soco == 0):
 		acertou_soco = 1
 		area.get_parent().vida -= DANO_SOCO
 		
@@ -258,14 +258,12 @@ func _on_Mao_area_entered(area):
 	
 
 func _on_Fora_area_entered(area):
-	print("ok")
-	#print(area.get_groups()
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo")) and area.get_parent() == self.get_parent().get_node("Player")):
 		colisaoPlayer = true
 	pass	
 
 func _on_Fora_area_exited(area):
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() == self.get_parent().get_node("Player")):
 		colisaoPlayer = false
 	pass
 	

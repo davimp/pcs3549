@@ -225,12 +225,10 @@ func move(delta):
 
 
 func _on_Mao_area_entered(area):
-	#print("'1'" + String(player) + " " + String(area.get_groups()) + " socao = " + String(soco)) 
-	
 	if(soco == 0):
 		return
 	
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self and acertou_soco == 0):
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() == self.get_parent().get_node("Player") and acertou_soco == 0):
 		acertou_soco = 1
 		area.get_parent().vida -= DANO_SOCO
 		
@@ -250,21 +248,17 @@ func _on_Mao_area_entered(area):
 			area.get_parent().get_node("Sprite").flip_h = !($Sprite.flip_h)
 			pass
 			
-		area.get_parent().socado(sentido)
-		
-	
+		area.get_parent().socado(sentido)	
 	pass
 	
 
 func _on_Fora_area_entered(area):
-	print("Fora")
-	#print(area.get_groups())
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo")) and area.get_parent() == self.get_parent().get_node("Player")):
 		colisaoPlayer = true
 	pass	
 
 func _on_Fora_area_exited(area):
-	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() != self):
+	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() == self.get_parent().get_node("Player")):
 		colisaoPlayer = false
 	pass
 	
