@@ -73,6 +73,7 @@ script = ExtResource( 1 )
 [node name="Background" parent="." instance=ExtResource( 2 )]
 
 [node name="MarginContainer" type="NinePatchRect" parent="."]
+editor/display_folded = true
 margin_top = -5.0
 margin_right = 1280.0
 margin_bottom = 720.0
@@ -92,6 +93,7 @@ __meta__ = {
 }
 
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer"]
+editor/display_folded = true
 anchor_top = 0.5
 anchor_bottom = 0.5
 margin_left = 106.802
@@ -158,7 +160,6 @@ position = Vector2( 65.5901, 249.397 )
 scale = Vector2( 0.965669, 0.921679 )
 frames = SubResource( 3 )
 animation = "New Anim"
-frame = 1
 playing = true
 flip_h = true
 
@@ -183,23 +184,27 @@ autoplay = true
 position = Vector2( 1105.98, 403.495 )
 scale = Vector2( 7, 7 )
 frames = SubResource( 4 )
+frame = 1
 playing = true
 
 [node name="Adult" type="AnimatedSprite" parent="."]
 position = Vector2( 927.514, 407.061 )
 scale = Vector2( 7, 7 )
 frames = SubResource( 5 )
+frame = 1
 playing = true
 
 [node name="hiroshi" type="AnimatedSprite" parent="."]
 position = Vector2( 752.996, 422.678 )
 scale = Vector2( 6.4, 6.4 )
 frames = SubResource( 3 )
+frame = 1
 playing = true
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 605.525, 453.757 )
 scale = Vector2( 5, 5 )
 frames = SubResource( 6 )
+frame = 1
 playing = true
 

@@ -8,7 +8,7 @@
 size = 60
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 size = 30
 font_data = ExtResource( 3 )
 
@@ -21,10 +21,10 @@ scale = Vector2( 5.74311, 5.149 )
 texture = ExtResource( 2 )
 
 [node name="creditos" type="Label" parent="."]
-margin_left = -1.62347
-margin_top = 25.2689
-margin_right = 1270.38
-margin_bottom = 148.269
+margin_left = 1.46747
+margin_top = 59.2685
+margin_right = 1273.47
+margin_bottom = 182.269
 custom_fonts/font = SubResource( 1 )
 text = "Créditos
 		"
@@ -33,12 +33,42 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="autores" type="Label" parent="."]
+margin_left = 137.466
+margin_top = 219.994
+margin_right = 1409.47
+margin_bottom = 468.994
+rect_scale = Vector2( 0.8, 0.8 )
+custom_fonts/font = SubResource( 1 )
+text = "Lucas hiroshi hanke harada
+mohamad hussein rkein
+davi de menezes pereira
+		"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="baseado" type="Label" parent="."]
+margin_left = 214.738
+margin_top = 473.446
+margin_right = 1654.74
+margin_bottom = 596.446
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = SubResource( 1 )
+text = "baseado no jogo spectrum party
+		"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="enter" type="Label" parent="."]
-margin_left = 469.0
-margin_top = 678.0
-margin_right = 817.0
-margin_bottom = 709.0
-custom_fonts/font = SubResource( 4 )
+margin_left = 465.909
+margin_top = 616.182
+margin_right = 813.909
+margin_bottom = 647.182
+custom_fonts/font = SubResource( 2 )
 text = "[ Press Enter ]"
 align = 1
 __meta__ = {
