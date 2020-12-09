@@ -37,9 +37,9 @@ func _input(event):
 		defstate()
 		pause()
 	elif event is InputEventKey:
-		if event.pressed and event.scancode == KEY_UP:
+		if event.pressed and (event.scancode == KEY_UP or event.scancode == KEY_W):
 			state -= 1
-		elif event.pressed and event.scancode == KEY_DOWN:
+		elif event.pressed and (event.scancode == KEY_DOWN or event.scancode == KEY_S):
 			state += 1
 		elif event.pressed and event.scancode == KEY_ENTER and visible:
 			if(state == 0):

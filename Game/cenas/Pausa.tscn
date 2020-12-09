@@ -6,7 +6,6 @@
 [ext_resource path="res://assets/idle.png" type="Texture" id=4]
 [ext_resource path="res://assets/choose.png" type="Texture" id=5]
 
-
 [sub_resource type="DynamicFont" id=1]
 size = 40
 font_data = ExtResource( 3 )
@@ -22,7 +21,6 @@ font_data = ExtResource( 3 )
 
 [node name="Pausa" type="CanvasLayer"]
 pause_mode = 2
-editor/display_folded = true
 
 [node name="Pausa" type="Control" parent="." groups=[
 "stop",
@@ -118,12 +116,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -45.5
-margin_top = -8.0
-margin_right = 45.5
-margin_bottom = 8.0
+margin_left = -53.6645
+margin_top = -6.83362
+margin_right = 50.3355
+margin_bottom = 9.16638
 custom_fonts/font = SubResource( 3 )
-text = "options"
+text = "CONTROLS"
 
 [node name="TextureButton3" type="TextureButton" parent="Pausa/NinePatchRect"]
 anchor_left = 0.5

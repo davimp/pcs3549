@@ -37,9 +37,9 @@ func defstate():
 
 func _input(event):
 	if event is InputEventKey:
-		if event.pressed and event.scancode == KEY_UP:
+		if event.pressed and (event.scancode == KEY_UP or event.scancode == KEY_W):
 			state -= 1
-		elif event.pressed and event.scancode == KEY_DOWN:
+		elif event.pressed and (event.scancode == KEY_DOWN or event.scancode == KEY_S):
 			state += 1
 		elif event.pressed and event.scancode == KEY_ENTER:
 			if state == 0:
@@ -47,6 +47,16 @@ func _input(event):
 
 				var basquete = scene.instance()
 				get_tree().get_root().add_child(basquete)
+
+				var atual = get_tree().get_root().get_node("MainMenu")
+				get_tree().get_root().remove_child(atual)
+				atual.call_deferred("free")
+			
+			elif state == 1:
+				var scene = load("res://cenas/Controles.tscn")
+		
+				var creditos = scene.instance()
+				get_tree().get_root().add_child(creditos)
 
 				var atual = get_tree().get_root().get_node("MainMenu")
 				get_tree().get_root().remove_child(atual)
