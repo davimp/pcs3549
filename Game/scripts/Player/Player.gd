@@ -73,9 +73,7 @@ func muda_atributos_idade():
 	pass
 	
 func relacao_vidas(idade_anterior, idade_atual):
-	if idade_anterior == -1:
-		idade_anterior += N_IDADES
-	return (VIDAIDADE[idade]/VIDAIDADE[idade_anterior])
+	return float(VIDAIDADE[idade_atual])/VIDAIDADE[idade_anterior]
 	
 
 # ---------------------------------------------------> FÍSICA <---------------------------------------------------------
