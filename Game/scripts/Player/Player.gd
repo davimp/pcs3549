@@ -5,7 +5,7 @@ export var idade = 0
 export var dinheiro = 400
 const N_IDADES = 4
 var nomeIdade = ["baby", "hiroshi", "adult", "old"]
-const DANOIDADE = [50, 100, 150, 130]
+const DANOIDADE = [50, 100, 150, 180]
 const VIDAIDADE = [500, 1000, 900, 750]
 
 const MAX_SPEED = 400
@@ -70,6 +70,8 @@ func _process(delta):
 		tempo_morte += delta
 		if tempo_morte >= TEMPO_MAX_MORTE:
 			renascimento = 0
+			vida = VIDAIDADE[idade]
+			self.get_parent().get_node("GUI").p1_life_bar.value = vida
 	
 	pass
 
