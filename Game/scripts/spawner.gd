@@ -1,7 +1,7 @@
 extends Position2D
 
 var cont
-var monstros_por_wave = 5
+var monstros_por_wave
 var wave_atual = 0
 var muda
 var aux
@@ -23,6 +23,7 @@ func _ready():
 	cont = 0
 	muda = 0
 	wave_atual = 0
+	monstros_por_wave = 2
 	randomize()
 	rng.randomize()
 	timerNode.set_wait_time(rand_range(minWaitTime, maxWaitTime))
@@ -32,6 +33,7 @@ func _on_timer_timeout():
 	if muda: #troca de wave
 		muda = 0
 		cont = 0
+		monstros_por_wave += 1
 		if wave_atual == 0:
 			spawnReference = load("res://cenas/Enemy.tscn")
 		elif wave_atual == 1:
