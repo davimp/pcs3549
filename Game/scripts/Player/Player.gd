@@ -173,11 +173,9 @@ func control(delta):
 	if vida <= 0:
 		return
 	
-	#print(lento)
 	
-	
-	if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left"):
-		if Input.is_action_pressed("ui_right"):
+	if Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left") || Input.is_key_pressed(KEY_D) || Input.is_key_pressed(KEY_A):
+		if Input.is_action_pressed("ui_right") || Input.is_key_pressed(KEY_D):
 			motion.x = SPEED
 			sentido = 1
 			$Sprite.flip_h = true
@@ -186,7 +184,7 @@ func control(delta):
 			else:
 				#animação de Run + punch
 				pass
-		if Input.is_action_pressed("ui_left"):
+		if Input.is_action_pressed("ui_left") || Input.is_key_pressed(KEY_A):
 			motion.x = - SPEED
 			sentido = -1
 			$Sprite.flip_h = false
@@ -197,8 +195,8 @@ func control(delta):
 				pass
 	else:
 		motion.x = 0
-	if Input.is_action_pressed("ui_down") || Input.is_action_pressed("ui_up"):
-		if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down") || Input.is_action_pressed("ui_up") || Input.is_key_pressed(KEY_W) || Input.is_key_pressed(KEY_S):
+		if Input.is_action_pressed("ui_down") || Input.is_key_pressed(KEY_S):
 			motion.y = SPEED
 			sentido = 1
 			if soco == 0:
@@ -206,7 +204,7 @@ func control(delta):
 			else:
 				#animação de Run + punch
 				pass
-		if Input.is_action_pressed("ui_up"):
+		if Input.is_action_pressed("ui_up") || Input.is_key_pressed(KEY_W):
 			motion.y = - SPEED
 			sentido = -1
 			if soco == 0:
