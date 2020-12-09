@@ -236,7 +236,10 @@ func _on_Mao_area_entered(area):
 	
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo"))  and area.get_parent() == self.get_parent().get_node("Player") and acertou_soco == 0):
 		acertou_soco = 1
-		area.get_parent().vida -= DANO_SOCO
+		if area.get_parent().idade <= 1:
+			area.get_parent().vida -= 2*DANO_SOCO
+		else:
+			area.get_parent().vida -= DANO_SOCO
 		
 		if area.get_parent().player == 1:
 			self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO
@@ -272,10 +275,17 @@ func _on_Fora_area_exited(area):
 	
 func morte():
 	emit_signal("my_signal")
-	if last_damage == 0:
-		get_parent().get_node("Player").dinheiro += DINHEIRO0
-	elif last_damage == 1:
-		get_parent().get_node("Player").dinheiro += DINHEIRO1
+	if(get_parent().get_node("Player").idade == 2):	
+		if last_damage == 0:
+			get_parent().get_node("Player").dinheiro += 2*DINHEIRO0
+		elif last_damage == 1:
+			get_parent().get_node("Player").dinheiro += 2*DINHEIRO1
+	else:
+		if last_damage == 0:
+			get_parent().get_node("Player").dinheiro += DINHEIRO0
+		elif last_damage == 1:
+			get_parent().get_node("Player").dinheiro += DINHEIRO1
+		
 	get_parent().remove_child(self)
 	#$Sprite.play("Dead")
 	pass

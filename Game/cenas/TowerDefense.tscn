@@ -81,6 +81,7 @@ margin_right = 69.6569
 margin_bottom = 24.6948
 custom_fonts/font = SubResource( 1 )
 text = "200"
+align = 1
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

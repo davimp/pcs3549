@@ -15,7 +15,7 @@ onready var timerNode = get_node(timerPath)
 export (float) var minWaitTime
 export (float) var maxWaitTime
 
-var pos = [Vector2(0.0, 0.0), Vector2(800, 30), Vector2(50, 700), Vector2(500, 700)]
+var pos = [Vector2(50, 50), Vector2(800, 50), Vector2(50, 650), Vector2(500, 650)]
 
 var rng = RandomNumberGenerator.new()
 

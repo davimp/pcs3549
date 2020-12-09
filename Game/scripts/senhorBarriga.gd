@@ -241,6 +241,7 @@ func _on_Mao_area_entered(area):
 	if ((area.get_groups().has("mao") or area.get_groups().has("corpo")) and area.get_parent() == self.get_parent().get_node("Player") and acertou_soco == 0):
 		acertou_soco = 1
 		area.get_parent().vida -= DANO_SOCO
+		area.get_parent().dinheiro = max(0, area.get_parent().dinheiro - 50)
 		
 		if area.get_parent().player == 1:
 			self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO

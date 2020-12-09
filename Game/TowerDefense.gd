@@ -3,7 +3,7 @@ extends TextureButton
 var cenaTorreta = preload("res://cenas/Torreta.tscn")
 var cenaEspinho = preload("res://cenas/Espinho.tscn")
 var cena = [cenaTorreta, cenaEspinho]
-var preco = [200, 100]
+var preco = [200, 20]
 var sprite
 
 var pos = 0
