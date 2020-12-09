@@ -6,7 +6,7 @@ var cena = [cenaTorreta, cenaEspinho]
 var preco = [200, 20, 50]
 var sprite
 
-var POCAO_AUMENTA = 100
+var POCAO_AUMENTA = 300
 
 var pos = 0
 const MAX = 3
@@ -44,7 +44,7 @@ func _process(delta):
 			else:
 				var nova = cena[pos].instance()
 				nova.position.x = 100
-				nova.position.y = 100
+				nova.position.y = 600
 				get_parent().add_child(nova)
 		click = 0
 
