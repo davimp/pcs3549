@@ -40,6 +40,8 @@ var normal = Vector2()
 var ocupado = 0
 
 signal morri
+var tempo_morte = 0
+const TEMPO_MAX_MORTE = 1
 
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
 func _ready():
@@ -56,8 +58,11 @@ func _ready():
 # --------------------------------------> FUNÇÃO CHAMADA A CADA FRAME <-----------------------------------------
 func _process(delta):
 	if vida <= 0:
-		$Sprite.play(nomeIdade[idade] + "Dead")
-		emit_signal("morri")
+		if tempo_morte == 0:
+			$Sprite.play(nomeIdade[idade] + "Dead")
+		tempo_morte += delta
+		if tempo_morte >= TEMPO_MAX_MORTE:
+			emit_signal("morri")
 	
 	pass
 
@@ -153,8 +158,6 @@ func empurrao(delta):
 # -----------------------------------------------------> CONTROLES <----------------------------------------------------
 func control(delta):
 	if vida <= 0:
-		$Sprite.play(nomeIdade[idade] + "Dead")
-		emit_signal("morri")
 		return
 	
 	#print(lento)

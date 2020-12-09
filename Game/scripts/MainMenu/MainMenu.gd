@@ -1,6 +1,6 @@
 extends Node2D
 
-onready var logo = $MarginContainer/Logo
+
 onready var menu = $MarginContainer/MenuOptions
 onready var seta = $Seta
 onready var sombra = $AnimatedSprite2
@@ -8,7 +8,7 @@ onready var new_game = $MarginContainer/MenuOptions/NewGame
 onready var options = $MarginContainer/MenuOptions/Options
 onready var credits = $MarginContainer/MenuOptions/Credits
 onready var quit_game = $MarginContainer/MenuOptions/QuitGame
-onready var roleta = $MarginContainer/Roleta
+
 var state = 0
 var number_of_options = 4
 
@@ -70,5 +70,5 @@ func _input(event):
 	defstate()
 	pass
 
-func _process(delta):
+func _process(_delta):
 	pass
