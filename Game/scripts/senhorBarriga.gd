@@ -165,48 +165,6 @@ func move(delta):
 		morte()
 		return
 	
-	#print(lento)
-	
-#	if self.get_parent().get_node("Player").position.x > self.position.x - erro:
-#		motion.x = SPEED
-#		sentido = 1
-#		$Sprite.flip_h = true
-#		if soco == 0 and not colisaoPlayer:
-#			$Sprite.play("Run")
-#		else:
-#			#animação de Run + punch
-#			pass
-#	elif self.get_parent().get_node("Player").position.x < self.position.x - erro:
-#		motion.x = - SPEED
-#		sentido = -1
-#		$Sprite.flip_h = false
-#		if soco == 0 and not colisaoPlayer:
-#			$Sprite.play("Run")
-#		else:
-#		#animação de Run + punch
-#			pass
-#	else:
-#		motion.x = 0
-#	if self.get_parent().get_node("Player").position.y > self.position.y + erro:
-#		motion.y = SPEED
-#		sentido = 1
-#		if soco == 0 and not colisaoPlayer:
-#			$Sprite.play("Run")
-#		else:
-#			#animação de Run + punch
-#			pass
-#	elif self.get_parent().get_node("Player").position.y < self.position.y - erro:
-#		motion.y = - SPEED
-#		sentido = -1
-#		if soco == 0 and not colisaoPlayer:
-#			$Sprite.play("Run")
-#		else:
-#			#animação de Run + punch
-#			pass
-#	else:
-#		motion.y = 0
-#		if soco == 0 and colisaoPlayer:
-#			pass#punch()
 	motion = (self.get_parent().get_node("Player").position - self.position).normalized() * SPEED
 	if motion.x > 0:
 		sentido = 1
@@ -243,10 +201,7 @@ func _on_Mao_area_entered(area):
 		area.get_parent().vida -= DANO_SOCO
 		area.get_parent().dinheiro = max(0, area.get_parent().dinheiro - 50)
 		
-		if area.get_parent().player == 1:
-			self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO
-		elif area.get_parent().player == 2:
-			self.get_parent().get_node("GUI").p2_life_bar.value -= DANO_SOCO
+		self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO
 		
 		var sound = AudioStreamPlayer2D.new();
 		self.add_child(sound);

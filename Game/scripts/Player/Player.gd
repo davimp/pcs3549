@@ -41,7 +41,8 @@ var ocupado = 0
 
 signal morri
 var tempo_morte = 0
-const TEMPO_MAX_MORTE = 1
+const TEMPO_MAX_MORTE = 1.4
+var renascimento = 0
 
 # --------------------------------------> FUNÇÃO CHAMADA QUANDO CARREGA O NÓ <-----------------------------------------
 func _ready():
@@ -63,6 +64,12 @@ func _process(delta):
 		tempo_morte += delta
 		if tempo_morte >= TEMPO_MAX_MORTE:
 			emit_signal("morri")
+	if renascimento == 1:
+		if tempo_morte == 0:
+			$Sprite.play("oldDead")
+		tempo_morte += delta
+		if tempo_morte >= TEMPO_MAX_MORTE:
+			renascimento = 0
 	
 	pass
 
@@ -75,6 +82,8 @@ func muda_atributos_idade():
 		idade_anterior += N_IDADES
 	vida = vida * relacao_vidas(idade_anterior, idade)
 	DANO_SOCO = DANOIDADE[idade]
+	if idade == 0:
+		renascimento = 1
 	pass
 	
 func relacao_vidas(idade_anterior, idade_atual):
@@ -83,6 +92,8 @@ func relacao_vidas(idade_anterior, idade_atual):
 
 # ---------------------------------------------------> FÍSICA <---------------------------------------------------------
 func _physics_process(delta):
+	if renascimento == 1:
+		return
 			
 	if knock_back == 0: 
 		socar(delta)
@@ -224,10 +235,6 @@ func _on_Mao_area_entered(area):
 		area.get_parent().vida -= DANO_SOCO
 		area.get_parent().last_damage = 0
 		acertou_soco = 1
-		if area.get_parent().player == 1:
-			self.get_parent().get_node("GUI").p1_life_bar.value -= DANO_SOCO
-		elif area.get_parent().player == 2:
-			self.get_parent().get_node("GUI").p2_life_bar.value -= DANO_SOCO
 		
 		var sound = AudioStreamPlayer2D.new();
 		self.add_child(sound);
@@ -235,10 +242,8 @@ func _on_Mao_area_entered(area):
 		sound.set_volume_db(-5);
 		sound.play();
 		
-		print ("morreu")
 		if area.get_parent().vida <= 0:
 			area.get_parent().get_node("Sprite").flip_h = !($Sprite.flip_h)
-			
 			pass
 			
 		area.get_parent().socado(sentido)

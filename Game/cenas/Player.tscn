@@ -97,29 +97,9 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "adultDead",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
-"loop": true,
-"name": "hiroshiRun",
-"speed": 22.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 17 ) ],
-"loop": false,
-"name": "alienPunch",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
-"loop": true,
-"name": "oldPunch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "hiroshiDead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 26 ), ExtResource( 27 ) ],
@@ -137,11 +117,6 @@ animations = [ {
 "name": "babyIdle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
-"loop": true,
-"name": "babyRun",
-"speed": 22.0
-}, {
 "frames": [ ExtResource( 42 ), ExtResource( 43 ) ],
 "loop": false,
 "name": "alienIdle",
@@ -152,29 +127,29 @@ animations = [ {
 "name": "hiroshiIdle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 46 ), ExtResource( 47 ) ],
-"loop": true,
-"name": "adultIdle",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "adultRun",
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 18 ), ExtResource( 17 ) ],
+"loop": false,
+"name": "alienPunch",
 "speed": 20.0
 }, {
-"frames": [ ExtResource( 58 ), ExtResource( 59 ) ],
+"frames": [ ExtResource( 32 ), ExtResource( 33 ), ExtResource( 34 ), ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ) ],
 "loop": true,
-"name": "adultPunch",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
-"loop": true,
-"name": "oldRun",
+"name": "babyRun",
 "speed": 22.0
 }, {
-"frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 20 ) ],
 "loop": true,
-"name": "oldDead",
+"name": "oldPunch",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 16 ) ],
+"loop": true,
+"name": "hiroshiRun",
+"speed": 22.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 25 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "hiroshiDead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ) ],
@@ -182,14 +157,39 @@ animations = [ {
 "name": "Laser",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 84 ), ExtResource( 84 ) ],
+"loop": true,
+"name": "babyDead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 58 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "adultPunch",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 78 ), ExtResource( 79 ) ],
 "loop": true,
 "name": "oldIdle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ) ],
+"frames": [ ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ) ],
 "loop": true,
-"name": "babyDead",
+"name": "oldRun",
+"speed": 22.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "adultRun",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ) ],
+"loop": true,
+"name": "adultIdle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 74 ), ExtResource( 74 ) ],
+"loop": true,
+"name": "oldDead",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 85 ), ExtResource( 86 ) ],
@@ -226,7 +226,6 @@ script = ExtResource( 1 )
 [node name="Sprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 1 )
 animation = "hiroshiPunch"
-frame = 1
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -271,7 +270,6 @@ visible = false
 position = Vector2( -14, -36 )
 frames = SubResource( 6 )
 frame = 6
-
 [connection signal="area_entered" from="Mao" to="." method="_on_Mao_area_entered"]
 [connection signal="body_entered" from="Mao" to="." method="_on_Mao_body_entered"]
 [connection signal="body_exited" from="Mao" to="." method="_on_Mao_body_exited"]
