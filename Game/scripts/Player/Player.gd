@@ -17,7 +17,7 @@ const KB_TIME = 0.2
 var motion = Vector2()
 var sentido = -1
 
-var DANO_SOCO = 100
+var DANO_SOCO = 150
 var VEL_SOCO = 120
 const TEMPO_SOCO = 0.4
 var soco = 0

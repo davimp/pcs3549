@@ -3,14 +3,16 @@ extends TextureButton
 var cenaTorreta = preload("res://cenas/Torreta.tscn")
 var cenaEspinho = preload("res://cenas/Espinho.tscn")
 var cena = [cenaTorreta, cenaEspinho]
-var preco = [200, 20]
+var preco = [200, 20, 50]
 var sprite
 
+var POCAO_AUMENTA = 100
+
 var pos = 0
-const MAX = 1 
+const MAX = 2
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite = [$Torreta, $Espinho]
+	sprite = [$Torreta, $Espinho, $Pocao]
 	pass # Replace with function body.
 	
 func _on_Right_button_up():
@@ -32,10 +34,20 @@ func _process(delta):
 	if click == 1:
 		if get_parent().get_node("Player").dinheiro >= preco[pos]:
 			get_parent().get_node("Player").dinheiro -= preco[pos]
-			var nova = cena[pos].instance()
-			nova.position.x = 100
-			nova.position.y = 100
-			get_parent().add_child(nova)
+			
+			if pos == 2:
+				var player = get_parent().get_node("Player")
+				if player.vida + POCAO_AUMENTA <= player.VIDAIDADE[player.idade]:
+					get_parent().get_node("GUI").p1_life_bar.value += POCAO_AUMENTA
+					player.vida = player.vida + POCAO_AUMENTA
+				else:
+					get_parent().get_node("GUI").p1_life_bar.value += player.VIDAIDADE[player.idade] - player.vida
+					player.vida = player.VIDAIDADE[player.idade]
+			else:
+				var nova = cena[pos].instance()
+				nova.position.x = 100
+				nova.position.y = 100
+				get_parent().add_child(nova)
 		click = 0
 
 func _on_Timer_timeout():

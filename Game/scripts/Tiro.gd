@@ -6,7 +6,7 @@ extends Node2D
 
 const SPEED = 100
 var sentido = 0
-var dano_tiro = 50
+var dano_tiro = 100
 var tiro_acertou = 0
 # 0 é norte, 1 é leste, 2 é sul e 3 é oeste
 # Called when the node enters the scene tree for the first time.

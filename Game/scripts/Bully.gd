@@ -54,7 +54,7 @@ func _ready():
 	
 	soco = 0
 	sentido = -1
-	vida = 50
+	vida = 300
 	mana = 100
 	knock_back = 0
 	ocupado = 0
