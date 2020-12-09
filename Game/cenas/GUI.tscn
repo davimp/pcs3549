@@ -81,3 +81,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="Continue" type="Button" parent="."]
+margin_left = 175.468
+margin_top = 54.4496
+margin_right = 260.468
+margin_bottom = 102.45
+text = "Continue"
+
+[connection signal="button_down" from="Continue" to="." method="_on_Button_button_down"]

@@ -30,7 +30,18 @@ func defstate():
 var primeiro = 1
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if get_parent().stop == 1:
+		$Continue.visible = true
+	else:
+		$Continue.visible = false
+		
 	if primeiro == 1:
 		p1_life_bar.rect_scale.x = 0.5
 		primeiro = 0
 #	pass
+
+
+func _on_Button_button_down():
+	if get_parent().stop == 1:
+		get_parent().stop = 2
+	pass # Replace with function body.

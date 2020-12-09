@@ -5,6 +5,7 @@ var waves
 var monstros_por_wave
 var wave_atual
 var total_waves = 3
+var stop = 0
 const WAVES_P_ENVELHECER = 3
 
 func _ready():
@@ -22,10 +23,8 @@ func _on_Enemy_my_signal():
 		envelhece()
 		wave_atual = ($spawner.wave_atual + 1)%total_waves
 		$spawner.wave_atual = wave_atual
-		print("Próxima wave = ", $spawner.wave_atual)
+		stop = 1
 		count = 0
-		waves += 1
-		$spawner.muda = 1
 		
 func envelhece():
 	if ((wave_atual+1) % WAVES_P_ENVELHECER == 0):
@@ -40,6 +39,12 @@ func envelhece():
 func _process(delta):
 	$GUI.get_node("Dinheiro").text = "$" + str($Player.dinheiro)
 	$GUI.get_node("Waves").text = "Wave " + str(wave_atual + 1)
+	
+	if stop == 2:
+		print("Próxima wave = ", $spawner.wave_atual)
+		waves += 1
+		$spawner.muda = 1
+		stop = 0
 
 func _on_Player_morri():
 	var scene = load("res://cenas/Fim.tscn")
