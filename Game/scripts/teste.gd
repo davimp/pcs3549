@@ -2,7 +2,6 @@ extends Node2D
 
 var count
 var waves
-var monstros_por_wave
 var wave_atual
 var total_waves = 3
 var stop = 0
@@ -12,16 +11,16 @@ func _ready():
 	count = 0
 	waves = 0
 	$spawner.muda = 0
-	monstros_por_wave = $spawner.monstros_por_wave
 	wave_atual = $spawner.wave_atual
 
 func _on_Enemy_my_signal():
 	count += 1
 	#print("debug1: ", count)
-	if count >= monstros_por_wave:
+	if count >= $spawner.monstros_por_wave:
 		print("Acabou a wave")
 		envelhece()
 		wave_atual = ($spawner.wave_atual + 1)%total_waves
+		waves += 1
 		$spawner.wave_atual = wave_atual
 		stop = 1
 		count = 0
@@ -38,11 +37,11 @@ func envelhece():
 		
 func _process(delta):
 	$GUI.get_node("Dinheiro").text = "$" + str($Player.dinheiro)
-	$GUI.get_node("Waves").text = "Wave " + str(wave_atual + 1)
+	$GUI.get_node("Waves").text = "Wave " + str(waves)
 	
 	if stop == 2:
 		print("Próxima wave = ", $spawner.wave_atual)
-		waves += 1
+		#waves += 1
 		$spawner.muda = 1
 		stop = 0
 
