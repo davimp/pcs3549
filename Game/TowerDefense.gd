@@ -9,25 +9,23 @@ var sprite
 var POCAO_AUMENTA = 100
 
 var pos = 0
-const MAX = 2
+const MAX = 3
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite = [$Torreta, $Espinho, $Pocao]
 	pass # Replace with function body.
 	
 func _on_Right_button_up():
-	if pos < MAX:
-		sprite[pos].visible = false
-		pos = pos + 1		
-		$Preco.text = str(preco[pos])
-		sprite[pos].visible = true
+	sprite[pos].visible = false
+	pos = (pos + 1)%MAX		
+	$Preco.text = str(preco[pos])
+	sprite[pos].visible = true
 		
 func _on_Left_button_up():
-	if pos > 0:
-		sprite[pos].visible = false
-		pos = pos - 1
-		$Preco.text = str(preco[pos])
-		sprite[pos].visible = true
+	sprite[pos].visible = false
+	pos = (pos - 1 + MAX)%MAX
+	$Preco.text = str(preco[pos])
+	sprite[pos].visible = true
 
 var click = -1
 func _process(delta):
