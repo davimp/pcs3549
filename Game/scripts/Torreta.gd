@@ -11,17 +11,24 @@ var tiro = preload("res://cenas/Tiro.tscn")
 var sentido = 3
 var dragging = false
 var click = false
+var wave_inicial
+
 
 signal dragsignal;
 
 func _ready():
 	connect("dragsignal",self,"_set_drag_pc")
+	wave_inicial = get_parent().waves
 
 func _set_drag_pc():
 	dragging=!dragging
 
 func _process(delta):
 	tempo = tempo + 1
+	if wave_inicial + 3 <= get_parent().waves:
+		get_parent().remove_child(self)
+		return
+	
 	if tempo == tempoTiro:
 		tempo = 0
 		var novo_tiro = tiro.instance()
